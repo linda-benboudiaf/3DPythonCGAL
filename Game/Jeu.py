@@ -63,7 +63,7 @@ class Jeu:
         else:
             return 0
 
-    def compter_points(self) -> string:
+    def compter_points(self):
         acc = 0
         acc_j1 = 0
         acc_j2 = 0
