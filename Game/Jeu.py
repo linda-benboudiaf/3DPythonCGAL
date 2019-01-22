@@ -44,8 +44,7 @@ class Jeu:
         pass
 
     def is_finish(self):
-        content = self.py.get_pion(0, Point.Point(0,0)).content
-        return (content == self.j1.pion) or (content == self.j2.pion)
+        return (self.j1.pions.length == 0) and (self.j2.pions.length == 0)
 
     def jouer(self):
         j = self.j1
