@@ -1,10 +1,14 @@
 # -*- coding: utf-8 -*-
 from visual import *
+import sys
+import CGAL
 # Mettre en place Camèra + Lumière ...
 # Scene represente le monde "World" on definit certain paramètre initial... 
 scene = display(x=0, y=0, z=0, width= 800, height=900, center=(1,0,0),title = 'Plateau.Inside', background=(1, 1, 1))
 scene.range = 2
 scene.autocenter = True
+# Lumière 
+local_light(pos=(-10,-10,10), color=color.red)
 
 #Premier niveau un pion possible 
 b1= box(pos=(0, 4,2), size=(2,2,2))
@@ -64,7 +68,6 @@ b27= box(pos=(10,2,-8), size=(2,2,2))
 CouleurChoco = vector(86.7,39.26,17.69)
 for cube in scene.objects:
     if isinstance(cube, box):
-        cube.color = color.orange
-
+        cube.color = vector(1,0.5, 1)
 
 
