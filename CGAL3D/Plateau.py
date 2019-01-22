@@ -1,14 +1,15 @@
 # -*- coding: utf-8 -*-
+from __future__ import division, print_function
 from visual import *
-import sys
-import CGAL
+from math import *
+
 # Mettre en place Camèra + Lumière ...
 # Scene represente le monde "World" on definit certain paramètre initial... 
 scene = display(x=0, y=0, z=0, width= 800, height=900, center=(1,0,0),title = 'Plateau.Inside', background=(1, 1, 1))
-scene.range = 2
+scene.range = 5
 scene.autocenter = True
 # Lumière 
-local_light(pos=(-10,-10,10), color=color.red)
+local_light(pos=(-10,-10,10), color=color.yellow)
 
 #Premier niveau un pion possible 
 b1= box(pos=(0, 4,2), size=(2,2,2))
@@ -69,5 +70,29 @@ CouleurChoco = vector(86.7,39.26,17.69)
 for cube in scene.objects:
     if isinstance(cube, box):
         cube.color = vector(1,0.5, 1)
+        
+# Drag and Drop du Cube
 
+cube = box(pos=(-1, 0,0), size=(2,2,2),color= color.yellow)
+drag_pos = None
+
+def take_obj(event):
+    global drag_pos
+    if event.pick == cube:
+        drag_pos = event.pickpos
+        scene.bind('mousemove', move, cube)
+        
+def move(evt, obj):
+    global drag_pos
+    # project onto xy plane, even if scene rotated:
+    new_pos = scene.mouse.project(normal=(0,0,1))
+    if new_pos != drag_pos: # if mouse has moved
+        obj.pos += new_pos - drag_pos 
+        drag_pos = new_pos 
+
+def drop(evt):
+    scene.unbind('mousemove', move)
+    scene.unbind('mouseup', drop)
+
+scene.bind('mousedown', take_obj)
 
