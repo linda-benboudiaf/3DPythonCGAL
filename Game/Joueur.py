@@ -24,7 +24,7 @@ class Joueur:
             self.pions.append(min)
         pass
 
-    def is_pion_available(self, pion) -> bool:
+    def is_pion_available(self, pion):
         return pion < len(self.pions)
 
     def __str__(self):

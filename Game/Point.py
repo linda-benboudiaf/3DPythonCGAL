@@ -11,17 +11,15 @@ class Point:
     def __str__(self):
         return str(self.content)
 
-    def is_ouvert(self) -> bool:
+    def is_ouvert(self):
         return self.content == 0
 
-    def equals(self, point) -> bool:
-        if not isinstance(point, Point.Point):
-            raise TypeError
+    def equals(self, point):
         return (self.x == point.x and self.y == point.y)
 
     #si les contenus adjacents (certains pattern) sont egaux au pion
-    def content_equals(self, point, pion) -> bool:
+    def content_equals(self, point, pion):
         return self.content == pion and point.content == pion
 
-    def occupe(self) -> bool:
+    def occupe(self):
         return (self.content != 3) and (self.content != 0)

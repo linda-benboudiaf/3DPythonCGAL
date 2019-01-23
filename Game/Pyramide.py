@@ -71,13 +71,13 @@ class Pyramide:
         pass
         return -1   """
 
-    def get_pion(self, etage: int, point: Point) -> Point:
+    def get_pion(self, etage, point):
         return self.plateau[etage].etageArray[point.x][point.y]
 
-    def set_pion(self, etage: int, point: Point, etat: int):
+    def set_pion(self, etage, point, etat):
         self.plateau[etage].etageArray[point.x][point.y].content = etat
 
-    def pose(self, etage: int, input: Point, pion: int) -> bool:
+    def pose(self, etage, input, pion):
         if not isinstance(input, Point.Point):
             raise TypeError
         print("Etage :"+str(etage)+", Point : ("+ str(input.x) + ", " + str(input.y) + ")")
