@@ -44,7 +44,7 @@ b14= box(pos=(6,4,-4), size=(2,2,2))
 b14Bis= box(pos=(6,4,-6), size=(2,2,2))
 b15= box(pos=(8,2,-4), size=(2,2,2))
 b15Bis= box(pos=(8,2,-6), size=(2,2,2))
-# Dernièr niveau
+# Dernier niveau
 b16= box(pos=(0,12,-6), size=(2,2,2))
 b17= box(pos=(2,10,-6), size=(2,2,2))
 b18= box(pos=(4,8,-6), size=(2,2,2))
@@ -72,21 +72,22 @@ for cube in scene.objects:
         cube.color = vector(1,0.5, 1)
         
 # Drag and Drop du Cube
+cube = box(pos=(10, -10,0), size=(2,2,2),color= color.yellow)
+n = 18
+#for i in range(n):
+    #cube = box(pos=(0, 0,0), size=(2,2,2),color= color.yellow)
 
-cube = box(pos=(-1, 0,0), size=(2,2,2),color= color.yellow)
 drag_pos = None
-
 def take_obj(event):
     global drag_pos
     if event.pick == cube:
         drag_pos = event.pickpos
         scene.bind('mousemove', move, cube)
-        
+        scene.bind('mouseup', drop, cube) #Drop the cube man !!
 def move(evt, obj):
-    global drag_pos
-    # project onto xy plane, even if scene rotated:
+    global drag_pos # The initial mouse position. 
     new_pos = scene.mouse.project(normal=(0,0,1))
-    if new_pos != drag_pos: # if mouse has moved
+    if new_pos != drag_pos: # if mouse has moved.  
         obj.pos += new_pos - drag_pos 
         drag_pos = new_pos 
 
@@ -95,4 +96,3 @@ def drop(evt):
     scene.unbind('mouseup', drop)
 
 scene.bind('mousedown', take_obj)
-
