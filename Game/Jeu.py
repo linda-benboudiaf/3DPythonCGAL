@@ -15,11 +15,10 @@ class Jeu:
         self.j2 = j2
         self.py = Pyramide.Pyramide()
 
-    def passerTour(self, j: Joueur):
-        #on incremente les variables pour ne pas les confondre entre elles / à des fonctions
+    def passerTour(self, j):
         adv = self.swap_j(j)
         print(adv)
-        p = input("n° pion? : ")
+        p = input("numero pion? : ")
         idx_pion = int(p)
         if adv.is_pion_available(idx_pion):
             pion = adv.pions.pop(idx_pion)
@@ -54,7 +53,7 @@ class Jeu:
         pass
         print(self.compter_points())
 
-    def qui_gagne(acc1, acc2) -> int:
+    def qui_gagne(acc1, acc2):
         if acc1 > acc2:
             return 1
         if acc1 < acc2:
@@ -79,7 +78,7 @@ class Jeu:
         pass
         acc += qui_gagne(acc_j1, acc_j2)
 
-        #2ème face gauche
+        #2eme face gauche
         for i in range(len(self.plateau)):
             for j in range(len(self.plateau[i].etageArray)):
                 if (self.plateau[i].etageArray[j][0].content == self.j1.pion):
@@ -91,7 +90,7 @@ class Jeu:
         pass
         acc += qui_gagne(acc_j1, acc_j2)
 
-        #3ème face
+        #3eme face
         for i in range(len(self.plateau)):
             for j in range(len(self.plateau[i].etageArray)):
                 if (self.plateau[i].etageArray[j][len(self.plateau[i].etageArray[j])-1].content == self.j1.pion):
@@ -110,7 +109,7 @@ class Jeu:
             return "match nul"
 
 
-    def rejouer(self, j: Joueur, etage: int, input: Point) -> bool:
+    def rejouer(self, j, etage, input):
         has_triplet = False
         if (input.x+1 < len(self.py.plateau[etage].etageArray)):
             if (input.y+1 < len(self.py.plateau[etage].etageArray[input.x])):
@@ -136,7 +135,7 @@ class Jeu:
         pass
         return has_triplet
 
-    def swap_j(self, j) -> Joueur:
+    def swap_j(self, j) :
         if (j == self.j1):
             return self.j2
         else:
