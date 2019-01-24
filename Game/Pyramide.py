@@ -29,9 +29,10 @@ class Pyramide:
             for j in range(len(self.plateau[i].etageArray)):
                 for k in range(len(self.plateau[i].etageArray[j])):
                     if ((j+1 < len(self.plateau[i].etageArray)) and (k+1 < len(self.plateau[i].etageArray[j]))):
+                        case = self.plateau[i].etageArray[j][k]
                         case_d = self.plateau[i].etageArray[j+1][k]
                         case_r = self.plateau[i].etageArray[j][k+1]
-                        if case_d.occupe() and case_r.occupe():
+                        if case_d.occupe() and case_r.occupe() and case.occupe():
                             if (i > 0) and (self.plateau[i-1].etageArray[j][k].content == 3):
                                 self.plateau[i-1].etageArray[j][k].content = 0
                             pass

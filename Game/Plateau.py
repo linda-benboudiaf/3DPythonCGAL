@@ -1,4 +1,4 @@
-from Game import Cube
+import Cube
 class Plateau:
 
     nb_cube = 36

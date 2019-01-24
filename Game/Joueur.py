@@ -11,9 +11,9 @@ class Joueur:
         self.pion = pion
         self.pions = []
         if (pion == 1):
-            self.init_pions(2, 1)
-        else:
             self.init_pions(1, 2)
+        else:
+            self.init_pions(2, 1)
         pass
 
     def init_pions(self, maj, min):

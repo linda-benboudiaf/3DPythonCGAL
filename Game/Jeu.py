@@ -15,41 +15,76 @@ class Jeu:
         self.j2 = j2
         self.py = Pyramide.Pyramide()
 
-    def passerTour(self, j):
-        adv = self.swap_j(j)
-        print(adv)
+    def choisir_piece(self, j):
+        print(j)
         p = input("numero pion? : ")
         idx_pion = int(p)
-        if adv.is_pion_available(idx_pion):
-            pion = adv.pions.pop(idx_pion)
+        if j.is_pion_available(idx_pion):
+            return j.pions.pop(idx_pion)
         else:
-            self.passerTour(j)
+            return self.choisir_piece_adv(j)
         pass
+
+    def verifier_inputs(etage, input):
+        return (input.x < etage+1) and (input.x >= 0) and (input.y < etage+1) and (input.y >= 0) and (etage >= 0) and (etage < 5)
+
+    def passerTour(self, j, finish):
         in1 = input("etage? : ")
         etage = int(in1)
-        in2 = input("x? : ")
+        in2 = input("y? : ") #le sens des axes, c'est complique. Stop juger
         x = int(in2)
-        in3 = input("y? : ")
+        in3 = input("x? : ")
         y = int(in3)
         input4 = Point.Point(x, y)
+        if (not Jeu.verifier_inputs(etage, input4)):
+            print("mauvais input")
+            self.passerTour(j, False)
+        pass
+        pion = self.choisir_piece(j)
         if (not self.py.pose(etage, input4, pion)):
-            self.passerTour(j)
+            print("place non disponible")
+            self.passerTour(j, False)
         pass
         self.py.debloquer_etage()
         print(self.py)
-        if (self.rejouer(j, etage, input4)):
-            print("rejouer")
-            self.passerTour(j)
-        pass
+        self.tour_supplementaire(j, etage, input4, pion)
+
+    def tour_supplementaire(self, j, etage, input4, pion):
+        rejouer = self.rejouer(j, etage, input4, pion)
+        if (rejouer > 0 and not finish):
+            pion = self.choisir_piece(self.swap_j(j))
+            if (rejouer == 1):
+                self.py.pose(etage-1, input4, pion)
+            pass
+            if (rejouer == 2):
+                self.py.pose(etage-1, Point.Point(input4.x, input4.y-1), pion)
+            pass
+            if (rejouer == 3):
+                self.py.pose(etage-1, Point.Point(input4.x-1, input4.y), pion)
+            pass
+            self.py.debloquer_etage()
+            print(self.py)
 
     def is_finish(self):
-        return (len(self.j1.pions) == 0) and (len(self.j2.pions) == 0)
+        return (len(self.j1.pions) == 0) or (len(self.j2.pions) == 0)
+
+    def is_really_finish(self, j):
+        return len(j.pions) == 0
 
     def jouer(self):
         j = self.j1
+        print(self.py)
         while (not self.is_finish()):
-            self.passerTour(j)
+            self.passerTour(j, False)
             j = self.swap_j(j)
+        pass
+        if (len(self.j1.pions) == 0):
+            j = self.j2
+        else:
+            j = self.j1
+        pass
+        while (not self.is_really_finish(j)):
+            self.passerTour(j, True)
         pass
         print(self.compter_points())
 
@@ -109,28 +144,33 @@ class Jeu:
             return "match nul"
 
 
-    def rejouer(self, j, etage, input):
-        has_triplet = False
-        if (input.x+1 < len(self.py.plateau[etage].etageArray)):
-            if (input.y+1 < len(self.py.plateau[etage].etageArray[input.x])):
-                case_d = self.py.plateau[etage].etageArray[input.x+1][input.y]
-                case_r = self.py.plateau[etage].etageArray[input.x][input.y+1]
-                print(case_d.content, case_r.content, j.pion)
-                has_triplet = case_d.content_equals(case_r, j.pion)
+    def rejouer(self, j, etage, input, pion):
+        has_triplet = -1
+        if j.pion == pion:
+            if (input.x+1 < len(self.py.plateau[etage].etageArray)):
+                if (input.y+1 < len(self.py.plateau[etage].etageArray[input.x])):
+                    case_d = self.py.plateau[etage].etageArray[input.x+1][input.y]
+                    case_r = self.py.plateau[etage].etageArray[input.x][input.y+1]
+                    if (case_d.content == case_r.content and case_d.content == pion):
+                        has_triplet = 1
+                    pass
+                pass
+                if (input.y > 0):
+                    case_l = self.py.plateau[etage].etageArray[input.x][input.y-1]
+                    case_ld = self.py.plateau[etage].etageArray[input.x+1][input.y-1]
+                    if (case_l.content == case_ld.content and case_ld.content == pion):
+                        has_triplet = 2
+                    pass
+                pass
             pass
-            if (input.y > 0):
-                case_u = self.py.plateau[etage].etageArray[input.x][input.y-1]
-                case_ur = self.py.plateau[etage].etageArray[input.x+1][input.y-1]
-                print(case_u.content, case_ur.content, j.pion)
-                has_triplet = has_triplet or case_u.content_equals(case_ur, j.pion)
-            pass
-        pass
-        if (input.x > 0):
-            if (input.y+1 < len(self.py.plateau[etage].etageArray[input.x])):
-                case_l = self.py.plateau[etage].etageArray[input.x-1][input.y]
-                case_ld = self.py.plateau[etage].etageArray[input.x-1][input.y+1]
-                print(case_l.content, case_ld.content, j.pion)
-                has_triplet = has_triplet or case_l.content_equals(case_ld, j.pion)
+            if (input.x > 0):
+                if (input.y+1 < len(self.py.plateau[etage].etageArray[input.x])):
+                    case_u = self.py.plateau[etage].etageArray[input.x-1][input.y]
+                    case_ur = self.py.plateau[etage].etageArray[input.x-1][input.y+1]
+                    if (case_u.content == case_ur.content and case_u.content == pion):
+                        has_triplet = 3
+                    pass
+                pass
             pass
         pass
         return has_triplet
