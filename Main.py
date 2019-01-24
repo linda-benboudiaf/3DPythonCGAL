@@ -10,5 +10,6 @@ def main():
     #jeu.jouer()
     #po = py.plateau[4].etageArray[0]
     #py.pose(4, po)
+pass
 
 main()
