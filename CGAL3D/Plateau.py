@@ -74,9 +74,11 @@ def initBoard():
 #        switcher={
 #                b1 : return b1 
 #        }
+drag_pos = None
 
 def take_obj(event):
         global drag_pos
+#### BEGINNING GAMER ONE CUBES #####
         if event.pick == b1: 
                 drag_pos = event.pickpos
                 scene.bind('mousemove', move, b1)
@@ -91,6 +93,79 @@ def take_obj(event):
                 scene.bind('mousemove', move, b3)
                 scene.bind('mouseup', drop, b3) 
                 pass
+        elif event.pick == b4: 
+                drag_pos = event.pickpos
+                scene.bind('mousemove', move, b4)
+                scene.bind('mouseup', drop, b4) 
+        elif event.pick == b5:
+                drag_pos = event.pickpos
+                scene.bind('mousemove', move, b5)
+                scene.bind('mouseup', drop, b5)
+                pass
+        elif event.pick == b6:
+                drag_pos = event.pickpos
+                scene.bind('mousemove', move, b6)
+                scene.bind('mouseup', drop, b6) 
+                pass
+        elif event.pick == b7:
+                drag_pos = event.pickpos
+                scene.bind('mousemove', move, b7)
+                scene.bind('mouseup', drop, b7)
+                pass
+        elif event.pick == b8:
+                drag_pos = event.pickpos
+                scene.bind('mousemove', move, b8)
+                scene.bind('mouseup', drop, b8) 
+                pass
+        elif event.pick == b9: 
+                drag_pos = event.pickpos
+                scene.bind('mousemove', move, b9)
+                scene.bind('mouseup', drop, b9) 
+        elif event.pick == b10:
+                drag_pos = event.pickpos
+                scene.bind('mousemove', move, b10)
+                scene.bind('mouseup', drop, b10)
+                pass
+        elif event.pick == b11:
+                drag_pos = event.pickpos
+                scene.bind('mousemove', move, b11)
+                scene.bind('mouseup', drop, b11) 
+                pass
+        elif event.pick == b12:
+                drag_pos = event.pickpos
+                scene.bind('mousemove', move, b12)
+                scene.bind('mouseup', drop, b12) 
+                pass
+        elif event.pick == b13:
+                drag_pos = event.pickpos
+                scene.bind('mousemove', move, b13)
+                scene.bind('mouseup', drop, b13)
+                pass
+        elif event.pick == b14:
+                drag_pos = event.pickpos
+                scene.bind('mousemove', move, b14)
+                scene.bind('mouseup', drop, b14) 
+                pass
+        elif event.pick == b15: 
+                drag_pos = event.pickpos
+                scene.bind('mousemove', move, b15)
+                scene.bind('mouseup', drop, b15) 
+        elif event.pick == b16:
+                drag_pos = event.pickpos
+                scene.bind('mousemove', move, b16)
+                scene.bind('mouseup', drop, b16)
+                pass
+        elif event.pick == b17:
+                drag_pos = event.pickpos
+                scene.bind('mousemove', move, b17)
+                scene.bind('mouseup', drop, b17)
+                pass
+        elif event.pick == b18:
+                drag_pos = event.pickpos
+                scene.bind('mousemove', move, b18)
+                scene.bind('mouseup', drop, b18) 
+                pass
+##### END OF GAMER ONE CUBES #######
 
 
 def move(evt, obj):
@@ -116,7 +191,7 @@ def main():
     local_light(pos=(10,10,0), color=color.white)
     global TailleCube
     TailleCube = vector(2,2,2)
-
+    scene.bind('mousedown', take_obj)    
     initBoard() 
     initCube()
     jeu()
@@ -124,10 +199,7 @@ def main():
 def initCube():       
     # Drag and Drop du Cube
     global cube
-    cube = box(pos=(0, -2, -8), size=TailleCube,color= color.yellow)
-    drag_pos = None
 
-    scene.bind('mousedown', take_obj)
 
 
 ## Créer des cubes pour les joueur 18 pour chaqu'un + attribution de couleurs ...
