@@ -70,12 +70,29 @@ def initBoard():
         pass
     pass
 
+#def EventToCube (arg):
+#        switcher={
+#                b1 : return b1 
+#        }
+
 def take_obj(event):
-    global drag_pos
-    if event.pick == cube:
-        drag_pos = event.pickpos
-        scene.bind('mousemove', move, cube)
-        scene.bind('mouseup', drop, cube) #Drop the cube man !!
+        global drag_pos
+        if event.pick == b1: 
+                drag_pos = event.pickpos
+                scene.bind('mousemove', move, b1)
+                scene.bind('mouseup', drop, b1) 
+        elif event.pick == b2:
+                drag_pos = event.pickpos
+                scene.bind('mousemove', move, b2)
+                scene.bind('mouseup', drop, b2)
+                pass
+        elif event.pick == b3:
+                drag_pos = event.pickpos
+                scene.bind('mousemove', move, b3)
+                scene.bind('mouseup', drop, b3) 
+                pass
+
+
 def move(evt, obj):
     global drag_pos # The initial mouse position. 
     new_pos = scene.mouse.project(normal=(0,0,1))
@@ -116,6 +133,7 @@ def initCube():
 ## Créer des cubes pour les joueur 18 pour chaqu'un + attribution de couleurs ...
 def initCubesGamer1 (initColor, oppositeColor):
         label(pos=(14, -2, 4), text= "Gamer 1")
+        global  b1, b2, b3,b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18
         b1= box(pos=(  12,  -2,  4), size= TailleCube, color = initColor) 
         b2= box(pos=(  15, -2, 4), size= TailleCube, color = initColor)
         b3= box(pos=(  18, -2, 4), size= TailleCube, color = initColor)
@@ -138,6 +156,7 @@ def initCubesGamer1 (initColor, oppositeColor):
 
 def initCubesGamer2 (initColor, oppositeColor):
         label(pos=(-14, -2, -4), text= "Gamer 2")
+        global b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36
         b19= box(pos=( -12, -2,  -4), size= TailleCube, color = initColor) 
         b20= box(pos=( -15, -2,  -4) , size= TailleCube, color = initColor)
         b21= box(pos=( -18, -2,  -4) , size= TailleCube, color = initColor)
