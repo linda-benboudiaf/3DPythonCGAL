@@ -4,4 +4,4 @@ import Pyramide
 import Point
 import Jeu
 import Joueur
-import Plateau
+import Plateau0
