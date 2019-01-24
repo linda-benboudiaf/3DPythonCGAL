@@ -72,6 +72,12 @@ class Pyramide:
         pass
         return -1   """
 
+    def is_bord(self, etage, case):
+        xmin = (case.x == 0)
+        ymin = (case.y == 0)
+        ymax = (case.y == len(self.plateau[etage].etageArray))
+        return (xmin or ymin or ymax)
+
     def get_pion(self, etage, point):
         return self.plateau[etage].etageArray[point.x][point.y]
 
