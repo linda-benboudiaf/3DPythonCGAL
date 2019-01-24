@@ -5,6 +5,9 @@ import Pyramide
 import Joueur
 import Point
 
+def verifier_inputs(etage, input):
+    return (input.x < etage+1) and (input.x >= 0) and (input.y < etage+1) and (input.y >= 0) and (etage >= 0) and (etage < 5)
+
 class Jeu:
 
     def __call__(self):
@@ -25,10 +28,7 @@ class Jeu:
             return self.choisir_piece_adv(j)
         pass
 
-    def verifier_inputs(etage, input):
-        return (input.x < etage+1) and (input.x >= 0) and (input.y < etage+1) and (input.y >= 0) and (etage >= 0) and (etage < 5)
-
-    def passerTour(self, j, finish):
+    def tour(self, j, finish):
         in1 = input("etage? : ")
         etage = int(in1)
         in2 = input("y? : ") #le sens des axes, c'est complique. Stop juger
@@ -36,14 +36,14 @@ class Jeu:
         in3 = input("x? : ")
         y = int(in3)
         input4 = Point.Point(x, y)
-        if (not Jeu.verifier_inputs(etage, input4)):
+        if (not verifier_inputs(etage, input4)):
             print("mauvais input")
-            self.passerTour(j, False)
+            self.tour(j, False)
         pass
         pion = self.choisir_piece(j)
         if (not self.py.pose(etage, input4, pion)):
             print("place non disponible")
-            self.passerTour(j, False)
+            self.tour(j, False)
         pass
         self.py.debloquer_etage()
         print(self.py)
@@ -75,7 +75,7 @@ class Jeu:
         j = self.j1
         print(self.py)
         while (not self.is_finish()):
-            self.passerTour(j, False)
+            self.tour(j, False)
             j = self.swap_j(j)
         pass
         if (len(self.j1.pions) == 0):
@@ -84,7 +84,7 @@ class Jeu:
             j = self.j1
         pass
         while (not self.is_really_finish(j)):
-            self.passerTour(j, True)
+            self.tour(j, True)
         pass
         print(self.compter_points())
 
