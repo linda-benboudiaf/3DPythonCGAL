@@ -1,4 +1,4 @@
 *.pyc
-.vscode
+.vscode/
 Game/__pycache__/
 Game/*.pyc
