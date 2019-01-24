@@ -166,6 +166,97 @@ def take_obj(event):
                 scene.bind('mouseup', drop, b18) 
                 pass
 ##### END OF GAMER ONE CUBES #######
+        ##### BEGINNING OF GAMER TWO CUBES #####
+        if event.pick == b19: 
+                drag_pos = event.pickpos
+                scene.bind('mousemove', move, b19)
+                scene.bind('mouseup', drop, b19)
+                pass 
+        elif event.pick == b20:
+                drag_pos = event.pickpos
+                scene.bind('mousemove', move, b20)
+                scene.bind('mouseup', drop, b20)
+                pass
+        elif event.pick == b21:
+                drag_pos = event.pickpos
+                scene.bind('mousemove', move, b21)
+                scene.bind('mouseup', drop, b21) 
+                pass
+        elif event.pick == b22: 
+                drag_pos = event.pickpos
+                scene.bind('mousemove', move, b22)
+                scene.bind('mouseup', drop, b22) 
+                pass
+        elif event.pick == b23:
+                drag_pos = event.pickpos
+                scene.bind('mousemove', move, b23)
+                scene.bind('mouseup', drop, b23)
+                pass
+        elif event.pick == b24:
+                drag_pos = event.pickpos
+                scene.bind('mousemove', move, b24)
+                scene.bind('mouseup', drop, b24) 
+                pass
+        elif event.pick == b25:
+                drag_pos = event.pickpos
+                scene.bind('mousemove', move, b25)
+                scene.bind('mouseup', drop, b25)
+                pass
+        elif event.pick == b26:
+                drag_pos = event.pickpos
+                scene.bind('mousemove', move, b26)
+                scene.bind('mouseup', drop, b26) 
+                pass
+        elif event.pick == b27:
+                drag_pos = event.pickpos
+                scene.bind('mousemove', move, b27)
+                scene.bind('mouseup', drop, b27) 
+                pass
+        elif event.pick == b28: 
+                drag_pos = event.pickpos
+                scene.bind('mousemove', move, b28)
+                scene.bind('mouseup', drop, b28) 
+                pass
+        elif event.pick == b29:
+                drag_pos = event.pickpos
+                scene.bind('mousemove', move, b29)
+                scene.bind('mouseup', drop, b29)
+                pass
+        elif event.pick == b30:
+                drag_pos = event.pickpos
+                scene.bind('mousemove', move, b30)
+                scene.bind('mouseup', drop, b30) 
+                pass
+        elif event.pick == b31:
+                drag_pos = event.pickpos
+                scene.bind('mousemove', move, b31)
+                scene.bind('mouseup', drop, b31) 
+                pass
+        elif event.pick == b32:
+                drag_pos = event.pickpos
+                scene.bind('mousemove', move, b32)
+                scene.bind('mouseup', drop, b32)
+                pass
+        elif event.pick == b33:
+                drag_pos = event.pickpos
+                scene.bind('mousemove', move, b33)
+                scene.bind('mouseup', drop, b33) 
+                pass
+        elif event.pick == b34: 
+                drag_pos = event.pickpos
+                scene.bind('mousemove', move, b34)
+                scene.bind('mouseup', drop, b34) 
+                pass
+        elif event.pick == b35:
+                drag_pos = event.pickpos
+                scene.bind('mousemove', move, b35)
+                scene.bind('mouseup', drop, b35)
+                pass
+        elif event.pick == b36:
+                drag_pos = event.pickpos
+                scene.bind('mousemove', move, b36)
+                scene.bind('mouseup', drop, b36) 
+                pass 
 
 
 def move(evt, obj):
