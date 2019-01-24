@@ -61,21 +61,16 @@ def initBoard():
     board = []
     for i in range(48):
         board.append(b)
-        label (pos=(0,0,0), text='This is a Cube')
+        label (pos=(0,0,0), text='Inside Board')
     pass
     # Définition de la couleur du plateau (Des cubes quoi !!)
     for cube in scene.objects:
         if isinstance(cube, box):
-            cube.color = vector(1,0.5, 1)
+            cube.color = vector(1, 0.4, 0.5)
         pass
     pass
 
-#def EventToCube (arg):
-#        switcher={
-#                b1 : return b1 
-#        }
 drag_pos = None
-
 def take_obj(event):
         global drag_pos
 #### BEGINNING GAMER ONE CUBES #####
@@ -279,7 +274,7 @@ def main():
     scene.range = 5
     scene.autocenter = True
     # Lumière 
-    local_light(pos=(10,10,0), color=color.white)
+    local_light(pos=(10,10,-10), color=color.yellow)
     global TailleCube
     TailleCube = vector(2,2,2)
     scene.bind('mousedown', take_obj)    
@@ -297,57 +292,57 @@ def initCube():
 def initCubesGamer1 (initColor, oppositeColor):
         label(pos=(14, -2, 4), text= "Gamer 1")
         global  b1, b2, b3,b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18
-        b1= box(pos=(  12,  -2,  4), size= TailleCube, color = initColor) 
-        b2= box(pos=(  15, -2, 4), size= TailleCube, color = initColor)
-        b3= box(pos=(  18, -2, 4), size= TailleCube, color = initColor)
-        b4= box(pos=(  21, -2,  4), size= TailleCube, color = initColor)
-        b5= box(pos=(  12, -6,  4), size= TailleCube, color = initColor)
-        b6= box(pos=(  15, -6,  4), size= TailleCube, color = initColor) 
-        b7= box(pos=(  18, -6,  4), size= TailleCube, color = initColor)
-        b8= box(pos=(  21, -6,  4), size= TailleCube, color = initColor)
-        b9= box(pos=(  24, -10,  4), size= TailleCube, color = initColor)
-        b10= box(pos=( 12, -10,  4), size= TailleCube, color = initColor)
-        b11= box(pos=( 15, -10,  4), size= TailleCube, color = initColor)
-        b12= box(pos=( 18, -10,  4), size= TailleCube, color = initColor)
-        b13= box(pos=( 21, -10,  4), size= TailleCube, color = initColor)
+        b1= box(pos=(  12,  -2,  -10), size= TailleCube, color = initColor) 
+        b2= box(pos=(  15, -2, -10), size= TailleCube, color = initColor)
+        b3= box(pos=(  18, -2, -10), size= TailleCube, color = initColor)
+        b4= box(pos=(  21, -2,  -10), size= TailleCube, color = initColor)
+        b5= box(pos=(  12, -6,  -10), size= TailleCube, color = initColor)
+        b6= box(pos=(  15, -6,  -10), size= TailleCube, color = initColor) 
+        b7= box(pos=(  18, -6,  -10), size= TailleCube, color = initColor)
+        b8= box(pos=(  21, -6,  -10), size= TailleCube, color = initColor)
+        b9= box(pos=(  24, -10,  -10), size= TailleCube, color = initColor)
+        b10= box(pos=( 12, -10,  -10), size= TailleCube, color = initColor)
+        b11= box(pos=( 15, -10,  -10), size= TailleCube, color = initColor)
+        b12= box(pos=( 18, -10,  -10), size= TailleCube, color = initColor)
+        b13= box(pos=( 21, -10,  -10), size= TailleCube, color = initColor)
         #Opposite Color       
-        b14= box(pos=( 12, 0,  4), size= TailleCube, color = oppositeColor)
-        b15= box(pos=( 15, 0,  4), size= TailleCube, color = oppositeColor)
-        b16= box(pos=( 18, 0,  4), size= TailleCube, color = oppositeColor)
-        b17= box(pos=( 21, 0,  4), size= TailleCube, color = oppositeColor)
-        b18= box(pos=( 24, 0,  4), size= TailleCube, color = oppositeColor)
+        b14= box(pos=( 12, 0,  -10), size= TailleCube, color = oppositeColor)
+        b15= box(pos=( 15, 0,  -10), size= TailleCube, color = oppositeColor)
+        b16= box(pos=( 18, 0,  -10), size= TailleCube, color = oppositeColor)
+        b17= box(pos=( 21, 0,  -10), size= TailleCube, color = oppositeColor)
+        b18= box(pos=( 24, 0,  -10), size= TailleCube, color = oppositeColor)
 
 def initCubesGamer2 (initColor, oppositeColor):
         label(pos=(-14, -2, -4), text= "Gamer 2")
         global b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36
-        b19= box(pos=( -12, -2,  -4), size= TailleCube, color = initColor) 
-        b20= box(pos=( -15, -2,  -4) , size= TailleCube, color = initColor)
-        b21= box(pos=( -18, -2,  -4) , size= TailleCube, color = initColor)
-        b22= box(pos=( -21, -2,  -4), size= TailleCube, color = initColor)
-        b23= box(pos=( -12, -6,  -4), size= TailleCube, color = initColor)
-        b24= box(pos=( -15, -6,  -4), size= TailleCube, color = initColor) 
-        b25= box(pos=( -18, -6,  -4), size= TailleCube, color = initColor)
-        b26= box(pos=( -21, -6,  -4), size= TailleCube, color = initColor)
-        b27= box(pos=( -24, -10, -4), size= TailleCube, color = initColor)
-        b28= box(pos=( -12, -10, -4), size= TailleCube, color = initColor)
-        b29= box(pos=( -15, -10, -4), size= TailleCube, color = initColor)
-        b30= box(pos=( -18, -10, -4), size= TailleCube, color = initColor)
-        b31= box(pos=( -21, -10, -4), size= TailleCube, color = initColor)
+        b19= box(pos=( -12, -2,  -10), size= TailleCube, color = initColor) 
+        b20= box(pos=( -15, -2,  -10) , size= TailleCube, color = initColor)
+        b21= box(pos=( -18, -2,  -10) , size= TailleCube, color = initColor)
+        b22= box(pos=( -21, -2,  -10), size= TailleCube, color = initColor)
+        b23= box(pos=( -12, -6,  -10), size= TailleCube, color = initColor)
+        b24= box(pos=( -15, -6,  -10), size= TailleCube, color = initColor) 
+        b25= box(pos=( -18, -6,  -10), size= TailleCube, color = initColor)
+        b26= box(pos=( -21, -6,  -10), size= TailleCube, color = initColor)
+        b27= box(pos=( -24, -10, -10), size= TailleCube, color = initColor)
+        b28= box(pos=( -12, -10, -10), size= TailleCube, color = initColor)
+        b29= box(pos=( -15, -10, -10), size= TailleCube, color = initColor)
+        b30= box(pos=( -18, -10, -10), size= TailleCube, color = initColor)
+        b31= box(pos=( -21, -10, -10), size= TailleCube, color = initColor)
         #Opposite Color        
-        b32= box(pos=( -12, 0,  -4), size= TailleCube, color = oppositeColor)
-        b33= box(pos=( -15, 0,  -4), size= TailleCube, color = oppositeColor)
-        b34= box(pos=( -18, 0,  -4), size= TailleCube, color = oppositeColor)
-        b35= box(pos=( -21, 0,  -4), size= TailleCube, color = oppositeColor)
-        b36= box(pos=( -24, 0,  -4), size= TailleCube, color = oppositeColor)
+        b32= box(pos=( -12, 0,  -10), size= TailleCube, color = oppositeColor)
+        b33= box(pos=( -15, 0,  -10), size= TailleCube, color = oppositeColor)
+        b34= box(pos=( -18, 0,  -10), size= TailleCube, color = oppositeColor)
+        b35= box(pos=( -21, 0,  -10), size= TailleCube, color = oppositeColor)
+        b36= box(pos=( -24, 0,  -10), size= TailleCube, color = oppositeColor)
 
 def jeu():
-        jCouleur_yellow = vector(1,1,0)
-        jCouleur_red = vector(1,0,0)
-        jCouleur_ini = input("Choisissez la couleur Red (1, 0,0) or Yellow (1,1,0) \t")
-        if jCouleur_ini == (1,1,0):
+        jCouleur_yellow = vector(1,1,0.4)
+        jCouleur_red = vector(1,0.6,0.4)
+        jCouleur_ini = input("Choisissez la couleur Brown (1, 0.6 , 0.4 ) or Yellow (1,1,0.4) \t")
+        if jCouleur_ini == (1,1,0.4):
                 initCubesGamer1(jCouleur_yellow, jCouleur_red )
                 initCubesGamer2(jCouleur_red, jCouleur_yellow)
-        elif jCouleur_ini == (1,0,0):
+        elif jCouleur_ini == (1,0.6,0.4):
                 initCubesGamer1(jCouleur_red, jCouleur_yellow)
                 initCubesGamer2(jCouleur_yellow, jCouleur_red)
                 pass
