@@ -72,7 +72,7 @@ def initBoard():
 
 drag_pos = None
 def take_obj(event):
-        global drag_pos
+        global drag_pos 
 #### BEGINNING GAMER ONE CUBES #####
         if event.pick == b1:
                 drag_pos = event.pickpos
@@ -258,8 +258,8 @@ def move(evt, obj):
     global drag_pos # The initial mouse position.
     new_pos = scene.mouse.project(normal=(0,0,1))
     if new_pos != drag_pos: # if mouse has moved.
-        obj.pos += new_pos - drag_pos
-        drag_pos = new_pos
+        obj.pos += new_pos - drag_pos # Update position of the called object 
+        drag_pos = new_pos # Drag position take the new position 
     pass
 
 def drop(evt):
@@ -269,7 +269,7 @@ def drop(evt):
 def main():
     # Mettre en place Camèra + Lumière ...
     # Scene represente le monde "World" on definit certain paramètre initial...
-    global scene
+    global scene # Represent the world 
     scene = display(x=0, y=0, title = 'Plateau.Inside', background=(0, 0, 0), width = 1000, height= 10000)
     scene.range = 5
     scene.autocenter = True
@@ -340,12 +340,12 @@ def jeu():
         jCouleur_red = vector(1,0.6,0.4)
         initCubesGamer1(jCouleur_yellow, jCouleur_red )
         initCubesGamer2(jCouleur_red, jCouleur_yellow)
-        #jCouleur_ini = input("Choisissez la couleur Brown (1, 0.6 , 0.4 ) or Yellow (1,1,0.4) \t")
-        #if jCouleur_ini == (1,1,0.4):
-        #        initCubesGamer1(jCouleur_yellow, jCouleur_red )
-        #        initCubesGamer2(jCouleur_red, jCouleur_yellow)
-        #elif jCouleur_ini == (1,0.6,0.4):
-        #        initCubesGamer1(jCouleur_red, jCouleur_yellow)
-        #        initCubesGamer2(jCouleur_yellow, jCouleur_red)
-        #        pass
+        jCouleur_ini = input("Choisissez la couleur Brown (1, 0.6 , 0.4 ) or Yellow (1,1,0.4) \t")
+        if jCouleur_ini == (1,1,0.4):
+                initCubesGamer1(jCouleur_yellow, jCouleur_red )
+                initCubesGamer2(jCouleur_red, jCouleur_yellow)
+        elif jCouleur_ini == (1,0.6,0.4):
+                initCubesGamer1(jCouleur_red, jCouleur_yellow)
+                initCubesGamer2(jCouleur_yellow, jCouleur_red)
+                pass
 main()

@@ -271,7 +271,7 @@ def main():
     # Scene represente le monde "World" on definit certain paramètre initial... 
     global scene
     scene = display(x=0, y=0, title = 'Plateau.Inside', background=(0, 0, 0), width = 1000, height= 10000)
-    scene.range = 5
+    scene.range = 40
     scene.autocenter = True
     # Lumière 
     local_light(pos=(10,10,-10), color=color.yellow)
@@ -280,7 +280,7 @@ def main():
     scene.bind('mousedown', take_obj)    
     initBoard() 
     initCube()
-    jeu()
+#    jeu()
 
 def initCube():       
     # Drag and Drop du Cube
@@ -335,15 +335,15 @@ def initCubesGamer2 (initColor, oppositeColor):
         b35= box(pos=( -21, 0,  -10), size= TailleCube, color = oppositeColor)
         b36= box(pos=( -24, 0,  -10), size= TailleCube, color = oppositeColor)
 
-def jeu():
-        jCouleur_yellow = vector(1,1,0.4)
-        jCouleur_red = vector(1,0.6,0.4)
-        jCouleur_ini = input("Choisissez la couleur Brown (1, 0.6 , 0.4 ) or Yellow (1,1,0.4) \t")
-        if jCouleur_ini == (1,1,0.4):
-                initCubesGamer1(jCouleur_yellow, jCouleur_red )
-                initCubesGamer2(jCouleur_red, jCouleur_yellow)
-        elif jCouleur_ini == (1,0.6,0.4):
-                initCubesGamer1(jCouleur_red, jCouleur_yellow)
-                initCubesGamer2(jCouleur_yellow, jCouleur_red)
-                pass
+#def jeu():
+#        jCouleur_yellow = vector(1,1,0.4)
+#        jCouleur_red = vector(1,0.6,0.4)
+#        jCouleur_ini = input("Choisissez la couleur Brown (1, 0.6 , 0.4 ) or Yellow (1,1,0.4) \t")
+#        if jCouleur_ini == (1,1,0.4):
+#                initCubesGamer1(jCouleur_yellow, jCouleur_red )
+#                initCubesGamer2(jCouleur_red, jCouleur_yellow)
+#        elif jCouleur_ini == (1,0.6,0.4):
+#                initCubesGamer1(jCouleur_red, jCouleur_yellow)
+#                initCubesGamer2(jCouleur_yellow, jCouleur_red)
+#                pass
 main()
