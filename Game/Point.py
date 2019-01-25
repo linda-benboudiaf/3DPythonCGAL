@@ -12,18 +12,14 @@ class Point:
         self.x = inputX
         self.y = inputY
         self.content = 3 # 0 ouvert, 1 noir, 2 blanc
-<<<<<<< HEAD
         self.refBox = box(pos=(0, 0, 0), size= vector(0,0,0), visible=False)
-=======
-        self.ref = -1
->>>>>>> 2b5ecb9a63d3754a850486634585215bacb2f68a
 
     def __str__(self):
         return str(self.content)
 
     def set_ref(self, ref):
         self.ref = ref
-        
+
     def is_ouvert(self):
         return self.content == 0
 
