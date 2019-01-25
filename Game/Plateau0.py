@@ -4,9 +4,6 @@ from visual import *
 from math import *
 import Point
 
-def equals(box1, box2):
-    return box1.pos == box2.pos
-
 def initBoard():
     #Premier niveau un pion possible
     b= box(pos=(  0, -4,  2), size= TailleCube)
@@ -189,7 +186,7 @@ def focus(board, i):
 def unfocus(board, i):
     board[i].opacity = 0.2
 
-def parcoursJ1(emplacement):
+def parcoursJ1():
     newFocus = 0
     pastFocus = 0
     print('J1')
@@ -210,7 +207,7 @@ def parcoursJ1(emplacement):
             if touche == '\n':
                 unfocus(boardJ1, newFocus)
                 print("selected")
-                break
+                return boardJ1[newFocus]
 
         # fin traitement touches clavier
         unfocus(boardJ1, pastFocus)
@@ -239,7 +236,8 @@ def parcoursJ2():
             if touche == '\n':
                 unfocus(boardJ2, newFocus)
                 print("selected")
-                break
+            return boardJ2[newFocus]
+
 
         # fin traitement touches clavier
         unfocus(boardJ2, pastFocus)
@@ -265,7 +263,7 @@ def parcours():
                         newFocus -= 1
             # fin traitement touches 'up' ou 'down'
             if touche == '\n':
-                parcoursJ1(boardD[newFocus])
+                return boardD[newFocus]
 
         # fin traitement touches clavier
         unfocus(boardD, pastFocus)
@@ -596,6 +594,13 @@ def refresh_plateau(py):
                     py.get_pion(i, Point.Point(j, k)).refBox.color = color.red
                 elif py.plateau[i].etageArray[j][k].content == 0:
                     boardD.append(py.get_pion(i, Point.Point(j, k)).refBox)
+                elif py.plateau[i].etageArray[j][k].content == 3:
+                    #boardD.append(py.get_pion(i, Point.Point(j, k)).refBox)
+                    for l in range(len(boardD)):
+                        if py.plateau[i].etageArray[j][k].refBox.pos == boardD[l].pos:
+                            boardD.pop(l)
+                        pass
+                    pass
                 pass
             pass
         pass
