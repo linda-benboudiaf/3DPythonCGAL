@@ -258,19 +258,17 @@ def parcours():
     newFocus = 0
     pastFocus = 0
     while True:
-        if scene.kb.keys: # une touche a-t-elle ete appuyee ?
-            touche = scene.kb.getkey() # de quelle touche s'agit-il ?
+        if scene.kb.keys:
+            touche = scene.kb.getkey() 
             if touche == 'up' or touche == 'down':
-                # la touche fleche vers le haut ou vers le bas
                 if touche == 'up':
-                    if newFocus < len(boardD)-1 : # le rayon des balles augmente
+                    if newFocus < len(boardD)-1 :
                         pastFocus = newFocus
                         newFocus += 1
                 else:
-                    if newFocus > 0: # le rayon des balles augmente
+                    if newFocus > 0: 
                         pastFocus = newFocus
                         newFocus -= 1
-            # fin traitement touches 'up' ou 'down'
             if touche == '\n':
                 return boardD[newFocus]
 
@@ -623,7 +621,6 @@ def refresh_plateau(py):
                     boardD.append(py.get_pion(i, Point.Point(j, k)).refBox)
                     py.plateau[i].etageArray[j][k].refBox.visible = True
                 elif py.plateau[i].etageArray[j][k].content == 3:
-                    #boardD.append(py.get_pion(i, Point.Point(j, k)).refBox)
                     for case in boardD:
                         if py.plateau[i].etageArray[j][k].refBox.pos == case.pos:
                             boardD.remove(case)
