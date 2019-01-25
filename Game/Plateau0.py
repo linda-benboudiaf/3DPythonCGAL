@@ -65,6 +65,8 @@ def initBoard():
         board.append(b)
         global txt
         txt = label(pos=(0,0,0), text='Inside Board')
+        global txt2
+        txt2 = label(pos=(0,4,0), text='Inside Message')
     pass
     # Définition de la couleur du plateau (Des cubes quoi !!)
     for cube in scene.objects:
@@ -82,6 +84,18 @@ def setText(cas):
         txt.text = "draw"
     else:
         txt.text = "wtf"
+
+def setText2(cas):
+    if cas == 1:
+        txt2.text = "au tour de J1"
+    elif cas == 2:
+        txt2.text = "au tour de J2"
+    elif cas == 3:
+        txt2.text = "placement ..."
+    elif cas == 0:
+        txt2.text = "chargement ..."
+    else:
+        txt2.text = "wtf"
 
 def initSystemD():
     global boardD
@@ -277,6 +291,7 @@ def parcours():
         unfocus(boardD, pastFocus)
         focus(boardD, newFocus)
         rate(100)
+        setText2(3)
 
 drag_pos = None
 
@@ -645,8 +660,10 @@ def refresh_plateau(py):
 
 def parcourir(j):
     if j.pion == 1:
+        setText2(1)
         return parcoursJ1()
     elif j.pion == 2:
+        setText2(2)
         return parcoursJ2()
     pass
 
