@@ -77,121 +77,211 @@ def initSystemD():
     global d400
     d400 = box(pos=(0, -2, 0), size= TailleCube, color=color.white, opacity=0.2, visible=True)
     boardD.append(d400)
-    jeu.py.get_pion(0, Point.Point(0, 0)).refBox = d400
-
+    jeu.py.get_pion(4, Point.Point(0, 0)).refBox = d400
     global d401
     d401 = box(pos=(0, -4, -2), size= TailleCube, color=color.white, opacity=0.2, visible=True)
     boardD.append(d401)
+    jeu.py.get_pion(4, Point.Point(0, 0)).refBox = d401
     global d410
     d410 = box(pos=(0, -6, -4), size= TailleCube, color=color.white, opacity=0.2, visible=True)
     boardD.append(d410)
+    jeu.py.get_pion(4, Point.Point(0, 0)).refBox = d410
     global d411
     d411 = box(pos=(0, -8, -6), size= TailleCube, color=color.white, opacity=0.2, visible=True)
     boardD.append(d411)
+    jeu.py.get_pion(4, Point.Point(0, 0)).refBox = d411
     global d402
     d402 = box(pos=(0, -10, -8), size= TailleCube, color=color.white, opacity=0.2, visible=True)
     boardD.append(d402)
+    jeu.py.get_pion(4, Point.Point(0, 0)).refBox = d402
     global d420
     d420 = box(pos=(-2, -2, -2), size= TailleCube, color=color.white, opacity=0.2, visible=True)
     boardD.append(d420)
+    jeu.py.get_pion(4, Point.Point(0, 0)).refBox = d420
     global d412
     d412 = box(pos=(-2, -4, -4), size= TailleCube, color=color.white, opacity=0.2, visible=True)
     boardD.append(d412)
+    jeu.py.get_pion(4, Point.Point(0, 0)).refBox = d412
     global d421
     d421 = box(pos=(-2, -6, -6), size= TailleCube, color=color.white, opacity=0.2, visible=True)
     boardD.append(d421)
+    jeu.py.get_pion(4, Point.Point(0, 0)).refBox = d421
     global d422
     d422 = box(pos=(-2, -8, -8), size= TailleCube, color=color.white, opacity=0.2, visible=True)
     boardD.append(d422)
+    jeu.py.get_pion(4, Point.Point(0, 0)).refBox = d422
     global d403
     d403 = box(pos=(-4, -2, -4), size= TailleCube, color=color.white, opacity=0.2, visible=True)
     boardD.append(d403)
+    jeu.py.get_pion(4, Point.Point(0, 0)).refBox = d403
     global d430
     d430 = box(pos=(-4, -4, -6), size= TailleCube, color=color.white, opacity=0.2, visible=True)
     boardD.append(d430)
+    jeu.py.get_pion(4, Point.Point(0, 0)).refBox = d430
     global d413
     d413 = box(pos=(-4, -6, -8), size= TailleCube, color=color.white, opacity=0.2, visible=True)
     boardD.append(d413)
+    jeu.py.get_pion(4, Point.Point(0, 0)).refBox = d413
     global d431
     d431 = box(pos=(-6, -2, -6), size= TailleCube, color=color.white, opacity=0.2, visible=True)
     boardD.append(d431)
+    jeu.py.get_pion(4, Point.Point(0, 0)).refBox = d431
     global d404
     d404 = box(pos=(-6, -4, -8), size= TailleCube, color=color.white, opacity=0.2, visible=True)
     boardD.append(d404)
+    jeu.py.get_pion(4, Point.Point(0, 0)).refBox = d404
     global d440
     d440 = box(pos=(-8, -2, -8), size= TailleCube, color=color.white, opacity=0.2, visible=True)
     boardD.append(d440)
+    jeu.py.get_pion(4, Point.Point(0, 0)).refBox = d440
     global d300
     d300 = box(pos=(0, -2, -2), size= TailleCube, color=color.white, opacity=0.2, visible=False)
     boardD.append(d300)
+    jeu.py.get_pion(3, Point.Point(0, 0)).refBox = d300
     global d301
     d301 = box(pos=(0, -4, -4), size= TailleCube, color=color.white, opacity=0.2, visible=False)
     boardD.append(d301)
+    jeu.py.get_pion(3, Point.Point(0, 0)).refBox = d301
     global d310
     d310 = box(pos=(0, -6, -6), size= TailleCube, color=color.white, opacity=0.2, visible=False)
     boardD.append(d310)
+    jeu.py.get_pion(3, Point.Point(0, 0)).refBox = d310
     global d311
     d311 = box(pos=(0, -8, -8), size= TailleCube, color=color.white, opacity=0.2, visible=False)
     boardD.append(d311)
+    jeu.py.get_pion(3, Point.Point(0, 0)).refBox = d311
     global d320
     d320 = box(pos=(-2, -2, -4), size= TailleCube, color=color.white, opacity=0.2, visible=False)
     boardD.append(d320)
+    jeu.py.get_pion(3, Point.Point(0, 0)).refBox = d320
     global d302
     d302 = box(pos=(-2, -4, -6), size= TailleCube, color=color.white, opacity=0.2, visible=False)
     boardD.append(d302)
+    jeu.py.get_pion(3, Point.Point(0, 0)).refBox = d302
     global d321
     d321 = box(pos=(-2, -6, -8), size= TailleCube, color=color.white, opacity=0.2, visible=False)
     boardD.append(d321)
+    jeu.py.get_pion(3, Point.Point(0, 0)).refBox = d321
     global d303
     d303 = box(pos=(-4, -4, -8), size= TailleCube, color=color.white, opacity=0.2, visible=False)
     boardD.append(d303)
+    jeu.py.get_pion(3, Point.Point(0, 0)).refBox = d303
     global d312
     d312 = box(pos=(-4, -2, -6), size= TailleCube, color=color.white, opacity=0.2, visible=False)
     boardD.append(d312)
+    jeu.py.get_pion(3, Point.Point(0, 0)).refBox = d312
     global d330
     d330 = box(pos=(-6, -2, -8), size= TailleCube, color=color.white, opacity=0.2, visible=False)
     boardD.append(d330)
+    jeu.py.get_pion(3, Point.Point(0, 0)).refBox = d330
     global d200
     d200 = box(pos=(0, -2,-4 ), size= TailleCube, color=color.white, opacity=0.2, visible=False)
     boardD.append(d200)
+    jeu.py.get_pion(2, Point.Point(0, 0)).refBox = d200
     global d201
     d201 = box(pos=(0, -4, -6), size= TailleCube, color=color.white, opacity=0.2, visible=False)
     boardD.append(d201)
+    jeu.py.get_pion(2, Point.Point(0, 0)).refBox = d201
     global d210
     d210 = box(pos=(0, -6, -8), size= TailleCube, color=color.white, opacity=0.2, visible=False)
     boardD.append(d210)
+    jeu.py.get_pion(2, Point.Point(0, 0)).refBox = d210
     global d211
     d211 = box(pos=(-2, -2,-6 ), size= TailleCube, color=color.white, opacity=0.2, visible=False)
     boardD.append(d211)
+    jeu.py.get_pion(2, Point.Point(0, 0)).refBox = d211
     global d220
     d220 = box(pos=(-2, -4, -8), size= TailleCube, color=color.white, opacity=0.2, visible=False)
     boardD.append(d220)
+    jeu.py.get_pion(2, Point.Point(0, 0)).refBox = d220
     global d202
     d202 = box(pos=(-4, -2, -8), size= TailleCube, color=color.white, opacity=0.2, visible=False)
     boardD.append(d202)
+    jeu.py.get_pion(2, Point.Point(0, 0)).refBox = d202
     global d100
     d100 = box(pos=(0, -2, -6 ), size= TailleCube, color=color.white, opacity=0.2, visible=False)
     boardD.append(d100)
+    jeu.py.get_pion(1, Point.Point(0, 0)).refBox = d100
     global d110
     d110 = box(pos=(0, -4, -8), size= TailleCube, color=color.white, opacity=0.2, visible=False)
     boardD.append(d110)
+    jeu.py.get_pion(1, Point.Point(0, 0)).refBox = d110
     global d101
     d101 = box(pos=(-2, -2, -8), size= TailleCube, color=color.white, opacity=0.2, visible=False)
     boardD.append(d101)
+    jeu.py.get_pion(1, Point.Point(0, 0)).refBox = d101
     global d000
     d000 = box(pos=(0,-2 ,-8 ), size= TailleCube, color=color.white, opacity=0.2, visible=False)
     boardD.append(d000)
+    jeu.py.get_pion(0, Point.Point(0, 0)).refBox = d000
 
-def focus(i):
-    boardD[i].color = color.red
+def focus(board, i):
+    board[i].opacity = 1
 
-def unfocus(i):
-    boardD[i].color = color.white
+def unfocus(board, i):
+    board[i].opacity = 0.2
 
-def test():
+def parcoursJ1(emplacement):
     newFocus = 0
     pastFocus = 0
-    d400.color = color.green
+    print('J1')
+    while True:
+        if scene.kb.keys: # une touche a-t-elle ete appuyee ?
+            touche = scene.kb.getkey() # de quelle touche s'agit-il ?
+            if touche == 'up' or touche == 'down':
+                # la touche fleche vers le haut ou vers le bas
+                if touche == 'up':
+                    if newFocus < 17 : # le rayon des balles augmente
+                        pastFocus = newFocus
+                        newFocus += 1
+                else:
+                    if newFocus > 0: # le rayon des balles augmente
+                        pastFocus = newFocus
+                        newFocus -= 1
+            # fin traitement touches 'up' ou 'down'
+            if touche == '\n':
+                unfocus(boardJ1, newFocus)
+                print("selected")
+                break
+
+        # fin traitement touches clavier
+        unfocus(boardJ1, pastFocus)
+        focus(boardJ1, newFocus)
+        rate(100)
+
+
+def parcoursJ2():
+    newFocus = 0
+    pastFocus = 0
+    print('J2')
+    while True:
+        if scene.kb.keys: # une touche a-t-elle ete appuyee ?
+            touche = scene.kb.getkey() # de quelle touche s'agit-il ?
+            if touche == 'up' or touche == 'down':
+                # la touche fleche vers le haut ou vers le bas
+                if touche == 'up':
+                    if newFocus < 17 : # le rayon des balles augmente
+                        pastFocus = newFocus
+                        newFocus += 1
+                else:
+                    if newFocus > 0: # le rayon des balles augmente
+                        pastFocus = newFocus
+                        newFocus -= 1
+            # fin traitement touches 'up' ou 'down'
+            if touche == '\n':
+                unfocus(boardJ2, newFocus)
+                print("selected")
+                break
+
+        # fin traitement touches clavier
+        unfocus(boardJ2, pastFocus)
+        focus(boardJ2, newFocus)
+        rate(100)
+
+
+def parcours():
+    newFocus = 0
+    pastFocus = 0
     while True:
         if scene.kb.keys: # une touche a-t-elle ete appuyee ?
             touche = scene.kb.getkey() # de quelle touche s'agit-il ?
@@ -206,9 +296,12 @@ def test():
                         pastFocus = newFocus
                         newFocus -= 1
             # fin traitement touches 'up' ou 'down'
+            if touche == '\n':
+                parcoursJ1(boardD[newFocus])
+
         # fin traitement touches clavier
-        unfocus(pastFocus)
-        focus(newFocus)
+        unfocus(boardD, pastFocus)
+        focus(boardD, newFocus)
         rate(100)
 
 drag_pos = None
@@ -415,56 +508,94 @@ def initCube():
 
 ## Créer des cubes pour les joueur 18 pour chaqu'un + attribution de couleurs ...
 def initCubesGamer1 (initColor, oppositeColor):
+    global boardJ1
+    boardJ1 = []
     label(pos=(14, -2, 4), text= "Gamer 1")
     global  b1, b2, b3,b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18
-    b1= box(pos=(  12,  -2,  -10), size= TailleCube, color = initColor)
-    b2= box(pos=(  15, -2, -10), size= TailleCube, color = initColor)
-    b3= box(pos=(  18, -2, -10), size= TailleCube, color = initColor)
-    b4= box(pos=(  21, -2,  -10), size= TailleCube, color = initColor)
-    b5= box(pos=(  12, -6,  -10), size= TailleCube, color = initColor)
-    b6= box(pos=(  15, -6,  -10), size= TailleCube, color = initColor)
-    b7= box(pos=(  18, -6,  -10), size= TailleCube, color = initColor)
-    b8= box(pos=(  21, -6,  -10), size= TailleCube, color = initColor)
-    b9= box(pos=(  24, -10,  -10), size= TailleCube, color = initColor)
-    b10= box(pos=( 12, -10,  -10), size= TailleCube, color = initColor)
-    b11= box(pos=( 15, -10,  -10), size= TailleCube, color = initColor)
-    b12= box(pos=( 18, -10,  -10), size= TailleCube, color = initColor)
-    b13= box(pos=( 21, -10,  -10), size= TailleCube, color = initColor)
+    b1= box(pos=(  12,  -2,  -10), size= TailleCube, opacity=0.5, color = initColor)
+    boardJ1.append(b1)
+    b2= box(pos=(  15, -2, -10), size= TailleCube, opacity=0.5, color = initColor)
+    boardJ1.append(b2)
+    b3= box(pos=(  18, -2, -10), size= TailleCube, opacity=0.5, color = initColor)
+    boardJ1.append(b3)
+    b4= box(pos=(  21, -2,  -10), size= TailleCube, opacity=0.5, color = initColor)
+    boardJ1.append(b4)
+    b5= box(pos=(  12, -6,  -10), size= TailleCube, opacity=0.5, color = initColor)
+    boardJ1.append(b5)
+    b6= box(pos=(  15, -6,  -10), size= TailleCube, opacity=0.5, color = initColor)
+    boardJ1.append(b6)
+    b7= box(pos=(  18, -6,  -10), size= TailleCube, opacity=0.5, color = initColor)
+    boardJ1.append(b7)
+    b8= box(pos=(  21, -6,  -10), size= TailleCube, opacity=0.5, color = initColor)
+    boardJ1.append(b8)
+    b9= box(pos=(  24, -10,  -10), size= TailleCube, opacity=0.5, color = initColor)
+    boardJ1.append(b9)
+    b10= box(pos=( 12, -10,  -10), size= TailleCube, opacity=0.5, color = initColor)
+    boardJ1.append(b10)
+    b11= box(pos=( 15, -10,  -10), size= TailleCube, opacity=0.5, color = initColor)
+    boardJ1.append(b11)
+    b12= box(pos=( 18, -10,  -10), size= TailleCube, opacity=0.5, color = initColor)
+    boardJ1.append(b12)
+    b13= box(pos=( 21, -10,  -10), size= TailleCube, opacity=0.5, color = initColor)
+    boardJ1.append(b13)
     #Opposite Color
-    b14= box(pos=( 12, 0,  -10), size= TailleCube, color = oppositeColor)
-    b15= box(pos=( 15, 0,  -10), size= TailleCube, color = oppositeColor)
-    b16= box(pos=( 18, 0,  -10), size= TailleCube, color = oppositeColor)
-    b17= box(pos=( 21, 0,  -10), size= TailleCube, color = oppositeColor)
-    b18= box(pos=( 24, 0,  -10), size= TailleCube, color = oppositeColor)
+    b14= box(pos=( 12, 0,  -10), size= TailleCube, opacity=0.5, color = oppositeColor)
+    boardJ1.append(b14)
+    b15= box(pos=( 15, 0,  -10), size= TailleCube, opacity=0.5, color = oppositeColor)
+    boardJ1.append(b15)
+    b16= box(pos=( 18, 0,  -10), size= TailleCube, opacity=0.5, color = oppositeColor)
+    boardJ1.append(b16)
+    b17= box(pos=( 21, 0,  -10), size= TailleCube, opacity=0.5, color = oppositeColor)
+    boardJ1.append(b17)
+    b18= box(pos=( 24, 0,  -10), size= TailleCube, opacity=0.5, color = oppositeColor)
+    boardJ1.append(b18)
 
 def initCubesGamer2 (initColor, oppositeColor):
+    global boardJ2
+    boardJ2 = []
     label(pos=(-14, -2, -4), text= "Gamer 2")
     global b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36
-    b19= box(pos=( -12, -2,  -10), size= TailleCube, color = initColor)
-    b20= box(pos=( -15, -2,  -10) , size= TailleCube, color = initColor)
-    b21= box(pos=( -18, -2,  -10) , size= TailleCube, color = initColor)
-    b22= box(pos=( -21, -2,  -10), size= TailleCube, color = initColor)
-    b23= box(pos=( -12, -6,  -10), size= TailleCube, color = initColor)
-    b24= box(pos=( -15, -6,  -10), size= TailleCube, color = initColor)
-    b25= box(pos=( -18, -6,  -10), size= TailleCube, color = initColor)
-    b26= box(pos=( -21, -6,  -10), size= TailleCube, color = initColor)
-    b27= box(pos=( -24, -10, -10), size= TailleCube, color = initColor)
-    b28= box(pos=( -12, -10, -10), size= TailleCube, color = initColor)
-    b29= box(pos=( -15, -10, -10), size= TailleCube, color = initColor)
-    b30= box(pos=( -18, -10, -10), size= TailleCube, color = initColor)
-    b31= box(pos=( -21, -10, -10), size= TailleCube, color = initColor)
+    b19= box(pos=( -12, -2,  -10), size= TailleCube, opacity=0.5, color = initColor)
+    boardJ2.append(b19)
+    b20= box(pos=( -15, -2,  -10) , size= TailleCube, opacity=0.5, color = initColor)
+    boardJ2.append(b20)
+    b21= box(pos=( -18, -2,  -10) , size= TailleCube, opacity=0.5, color = initColor)
+    boardJ2.append(b21)
+    b22= box(pos=( -21, -2,  -10), size= TailleCube, opacity=0.5, color = initColor)
+    boardJ2.append(b22)
+    b23= box(pos=( -12, -6,  -10), size= TailleCube, opacity=0.5, color = initColor)
+    boardJ2.append(b23)
+    b24= box(pos=( -15, -6,  -10), size= TailleCube, opacity=0.5, color = initColor)
+    boardJ2.append(b24)
+    b25= box(pos=( -18, -6,  -10), size= TailleCube, opacity=0.5, color = initColor)
+    boardJ2.append(b25)
+    b26= box(pos=( -21, -6,  -10), size= TailleCube, opacity=0.5, color = initColor)
+    boardJ2.append(b26)
+    b27= box(pos=( -24, -10, -10), size= TailleCube, opacity=0.5, color = initColor)
+    boardJ2.append(b27)
+    b28= box(pos=( -12, -10, -10), size= TailleCube, opacity=0.5, color = initColor)
+    boardJ2.append(b28)
+    b29= box(pos=( -15, -10, -10), size= TailleCube, opacity=0.5, color = initColor)
+    boardJ2.append(b29)
+    b30= box(pos=( -18, -10, -10), size= TailleCube, opacity=0.5, color = initColor)
+    boardJ2.append(b30)
+    b31= box(pos=( -21, -10, -10), size= TailleCube, opacity=0.5, color = initColor)
+    boardJ2.append(b31)
     #Opposite Color
-    b32= box(pos=( -12, 0,  -10), size= TailleCube, color = oppositeColor)
-    b33= box(pos=( -15, 0,  -10), size= TailleCube, color = oppositeColor)
-    b34= box(pos=( -18, 0,  -10), size= TailleCube, color = oppositeColor)
-    b35= box(pos=( -21, 0,  -10), size= TailleCube, color = oppositeColor)
-    b36= box(pos=( -24, 0,  -10), size= TailleCube, color = oppositeColor)
+    b32= box(pos=( -12, 0,  -10), size= TailleCube, opacity=0.5, color = oppositeColor)
+    boardJ2.append(b32)
+    b33= box(pos=( -15, 0,  -10), size= TailleCube, opacity=0.5, color = oppositeColor)
+    boardJ2.append(b33)
+    b34= box(pos=( -18, 0,  -10), size= TailleCube, opacity=0.5, color = oppositeColor)
+    boardJ2.append(b34)
+    b35= box(pos=( -21, 0,  -10), size= TailleCube, opacity=0.5, color = oppositeColor)
+    boardJ2.append(b35)
+    b36= box(pos=( -24, 0,  -10), size= TailleCube, opacity=0.5, color = oppositeColor)
+    boardJ2.append(b36)
 
-def jeu():
+def initJeu():
     jCouleur_yellow = vector(1,1,0)
     jCouleur_red = vector(1,0,0)
-    initCubesGamer1(jCouleur_yellow, jCouleur_red )
-    initCubesGamer2(jCouleur_red, jCouleur_yellow)
     #jCouleur_ini = input("Choisissez la couleur Red (1, 0,0) or Yellow (1,1,0) \t")
     #if jCouleur_ini == (1,1,0):
     #    initCubesGamer1(jCouleur_yellow, jCouleur_red )
@@ -473,6 +604,8 @@ def jeu():
     #    initCubesGamer1(jCouleur_red, jCouleur_yellow)
     #    initCubesGamer2(jCouleur_yellow, jCouleur_red)
     #pass
+    initCubesGamer1(jCouleur_yellow, jCouleur_red )
+    initCubesGamer2(jCouleur_red, jCouleur_yellow)
 
 def main(jeuInput):
     global jeu
@@ -493,4 +626,4 @@ def main(jeuInput):
     initBoard()
     initCube()
     initSystemD()
-    jeu()
+    initJeu()
