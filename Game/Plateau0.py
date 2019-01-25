@@ -2,6 +2,7 @@
 from __future__ import division, print_function
 from visual import *
 from math import *
+import Point
 
 def initBoard():
     #Premier niveau un pion possible
@@ -76,6 +77,8 @@ def initSystemD():
     global d400
     d400 = box(pos=(0, -2, 0), size= TailleCube, color=color.white, opacity=0.2, visible=True)
     boardD.append(d400)
+    jeu.py.get_pion(0, Point.Point(0, 0)).refBox = d400
+
     global d401
     d401 = box(pos=(0, -4, -2), size= TailleCube, color=color.white, opacity=0.2, visible=True)
     boardD.append(d401)
@@ -471,7 +474,9 @@ def jeu():
     #    initCubesGamer2(jCouleur_yellow, jCouleur_red)
     #pass
 
-def main():
+def main(jeuInput):
+    global jeu
+    jeu = jeuInput
     # Mettre en place Camèra + Lumière ...
     # Scene represente le monde "World" on definit certain paramètre initial...
     global scene

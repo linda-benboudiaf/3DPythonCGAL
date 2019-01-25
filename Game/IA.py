@@ -178,4 +178,4 @@ class IA(Joueur.Joueur):
                 pass
             pass
         pass
-        self.py.plateau[0].etageArray[0][0].content += 20 #le sommet tant convoité
+        self.py.plateau[0].etageArray[0][0].content += 20 #le sommet tant convoit"et" -nonASCII
