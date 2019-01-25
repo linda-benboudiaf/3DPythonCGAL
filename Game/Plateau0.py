@@ -214,7 +214,6 @@ def parcoursJ1():
         focus(boardJ1, newFocus)
         rate(100)
 
-
 def parcoursJ2():
     newFocus = 0
     pastFocus = 0
@@ -243,7 +242,6 @@ def parcoursJ2():
         unfocus(boardJ2, pastFocus)
         focus(boardJ2, newFocus)
         rate(100)
-
 
 def parcours():
     newFocus = 0
@@ -584,21 +582,40 @@ def init_plateau(py):
         pass
     pass
 
+def is_in_board(box):
+    for l in range(len(boardD)):
+        if box.pos == boardD[l].pos:
+            return True
+        pass
+    pass
+    return False
+
 def refresh_plateau(py):
     for i in range(len(py.plateau)):
         for j in range(len(py.plateau[i].etageArray)):
             for k in range(len(py.plateau[i].etageArray[j])):
                 if py.plateau[i].etageArray[j][k].content == 1:
                     py.get_pion(i, Point.Point(j, k)).refBox.color = color.yellow
+                    for case in boardD:
+                        if py.plateau[i].etageArray[j][k].refBox.pos == case.pos:
+                            boardD.remove(case)
+                        pass
+                    pass
                 elif py.plateau[i].etageArray[j][k].content == 2:
                     py.get_pion(i, Point.Point(j, k)).refBox.color = color.red
-                elif py.plateau[i].etageArray[j][k].content == 0:
+                    for case in boardD:
+                        if py.plateau[i].etageArray[j][k].refBox.pos == case.pos:
+                            boardD.remove(case)
+                        pass
+                    pass
+                elif py.plateau[i].etageArray[j][k].content == 0 and not is_in_board(py.plateau[i].etageArray[j][k].refBox):
                     boardD.append(py.get_pion(i, Point.Point(j, k)).refBox)
+                    py.plateau[i].etageArray[j][k].refBox.visible = True
                 elif py.plateau[i].etageArray[j][k].content == 3:
                     #boardD.append(py.get_pion(i, Point.Point(j, k)).refBox)
-                    for l in range(len(boardD)):
-                        if py.plateau[i].etageArray[j][k].refBox.pos == boardD[l].pos:
-                            boardD.pop(l)
+                    for case in boardD:
+                        if py.plateau[i].etageArray[j][k].refBox.pos == case.pos:
+                            boardD.remove(case)
                         pass
                     pass
                 pass
