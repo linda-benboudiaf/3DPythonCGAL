@@ -10,7 +10,6 @@ class Joueur:
         self.name = name
         self.pion = pion
         self.pions = []
-        self.cubes = cubes
         if (pion == 1):
             self.init_pions(1, 2)
         else:
