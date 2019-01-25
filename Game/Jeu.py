@@ -57,7 +57,7 @@ class Jeu:
             self.tour_supplementaire_IA(j, case[0], case[1], rejouer)
         pass
 
-    def tour(self, j, ref, finish):
+    def tour(self, j, finish):
         """
         in1 = input("etage? : ")
         etage = int(in1)
@@ -66,28 +66,29 @@ class Jeu:
         in3 = input("x? : ")
         y = int(in3)
         """
-        point = self.py.trouver_coordonnees(ref)
+        ref = Plateau0.parcourir(j)
+        pion = self.choisir_piece(j, j.get_associate_pion(ref))
+        ref_plateau = Plateau0.parcours()
+        point = self.py.trouver_coordonnees(ref_plateau)
         etage = point[0]
         x = point[1].x
         y = point[1].y
         input4 = Point.Point(x, y)
         if (not verifier_inputs(etage, input4)):
             print("mauvais input")
-            ref = Plateau0.parcours(j)
-            self.tour(j, ref, False)
+            ref = Plateau0.parcourir(j)
+            self.tour(j, False)
         pass
-        ref = Plateau0.parcours(self.swap_j(j))
-        pion = self.choisir_piece(j, j.get_associate_pion(ref))
         if (not self.py.pose(etage, input4, pion)):
             print("place non disponible")
-            ref = Plateau0.parcours(j)
-            self.tour(j, ref, False)
+            ref = Plateau0.parcourir(j)
+            self.tour(j, False)
         pass
         self.py.debloquer_etage()
         print(self.py)
         rejouer = self.rejouer(j, etage, input4, pion)
         if (rejouer > 0 and not finish):
-            ref = Plateau0.parcours(self.swap_j(j))
+            ref = Plateau0.parcourir(self.swap_j(j))
             pion = self.choisir_piece(self.swap_j(j), self.swap_j(j).get_associate_pion(ref))
             self.tour_supplementaire(j, etage, input4, pion, rejouer)
         pass
@@ -153,8 +154,7 @@ class Jeu:
                 self.tourIA(j, False)
                 print("IA TURN")
             else:
-                ref = Plateau0.parcours(j)
-                self.tour(j, ref, False)
+                self.tour(j, False)
             pass
             Plateau0.refresh_plateau(self.py)
             j = self.swap_j(j)
@@ -168,8 +168,7 @@ class Jeu:
             if (isinstance(j, IA.IA)):
                 self.tourIA(j, True)
             else:
-                ref = Plateau0.parcours(j)
-                self.tour(j, ref, True)
+                self.tour(j, True)
             pass
             Plateau0.refresh_plateau(self.py)
         pass

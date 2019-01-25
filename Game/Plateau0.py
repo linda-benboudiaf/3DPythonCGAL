@@ -601,7 +601,7 @@ def refresh_plateau(py):
         pass
     pass
 
-def parcours(j):
+def parcourir(j):
     if j.pion == 1:
         return parcoursJ1()
     elif j.pion == 2:
