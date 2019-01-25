@@ -1,6 +1,8 @@
 """
     Potentiellement documenter le module ici mais ne pas trop le faire parce que c'est pour les faibles
 """
+import Plateau0
+
 class Joueur:
 
     def __call__(self):
@@ -10,11 +12,22 @@ class Joueur:
         self.name = name
         self.pion = pion
         self.pions = []
+        self.cubes = cubes
         if (pion == 1):
             self.init_pions(1, 2)
         else:
             self.init_pions(2, 1)
         pass
+
+    def get_associate_pion(self, ref):
+        for i in range(len(cubes)):
+            if Plateau0.equals(ref, cubes[i]):
+                ref.visible = False
+                cubes.pop(i)
+                return i
+            pass
+        pass
+        return -1
 
     def init_pions(self, maj, min):
         for i in range(13):

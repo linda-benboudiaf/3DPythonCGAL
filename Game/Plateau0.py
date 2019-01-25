@@ -4,6 +4,9 @@ from visual import *
 from math import *
 import Point
 
+def equals(box1, box2):
+    return box1.pos == box2.pos
+
 def initBoard():
     #Premier niveau un pion possible
     b= box(pos=(  0, -4,  2), size= TailleCube)
@@ -596,6 +599,13 @@ def refresh_plateau(py):
                 pass
             pass
         pass
+    pass
+
+def parcours(j):
+    if j.pion == 1:
+        return parcoursJ1()
+    elif j.pion == 2:
+        return parcoursJ2()
     pass
 
 def main(jeuInput):

@@ -20,14 +20,16 @@ class Jeu:
         self.j2 = j2
         self.py = Pyramide.Pyramide()
 
-    def choisir_piece(self, j):
+    def choisir_piece(self, j, idx_pion):
+        """
         print(j)
         p = input("numero pion? : ")
         idx_pion = int(p)
+        """
         if j.is_pion_available(idx_pion):
             return j.pions.pop(idx_pion)
         else:
-            return self.choisir_piece(j)
+            return self.choisir_piece(j, idx_pion)
         pass
 
     def choisir_piece_IA(self, j, piece):
@@ -71,18 +73,22 @@ class Jeu:
         input4 = Point.Point(x, y)
         if (not verifier_inputs(etage, input4)):
             print("mauvais input")
-            self.tour(j, False)
+            ref = Plateau0.parcours(j)
+            self.tour(j, ref, False)
         pass
-        pion = self.choisir_piece(j)
+        ref = Plateau0.parcours(self.swap_j(j))
+        pion = self.choisir_piece(j, j.get_associate_pion(ref))
         if (not self.py.pose(etage, input4, pion)):
             print("place non disponible")
-            self.tour(j, False)
+            ref = Plateau0.parcours(j)
+            self.tour(j, ref, False)
         pass
         self.py.debloquer_etage()
         print(self.py)
         rejouer = self.rejouer(j, etage, input4, pion)
         if (rejouer > 0 and not finish):
-            pion = self.choisir_piece(self.swap_j(j))
+            ref = Plateau0.parcours(self.swap_j(j))
+            pion = self.choisir_piece(self.swap_j(j), self.swap_j(j).get_associate_pion(ref))
             self.tour_supplementaire(j, etage, input4, pion, rejouer)
         pass
 
@@ -147,7 +153,7 @@ class Jeu:
                 self.tourIA(j, False)
                 print("IA TURN")
             else:
-                #ref = placer fct de choix ici
+                ref = Plateau0.parcours(j)
                 self.tour(j, ref, False)
             pass
             Plateau0.refresh_plateau(self.py)
@@ -162,6 +168,7 @@ class Jeu:
             if (isinstance(j, IA.IA)):
                 self.tourIA(j, True)
             else:
+                ref = Plateau0.parcours(j)
                 self.tour(j, ref, True)
             pass
             Plateau0.refresh_plateau(self.py)
