@@ -7,7 +7,6 @@ import Point
 import random
 
 #l'IA attribue une note sur 10 hahahahahaha
-
 class IA(Joueur.Joueur):
     def __init__(self, pion, name):
         self.py = Pyramide.Pyramide()
@@ -54,7 +53,6 @@ class IA(Joueur.Joueur):
             pass
         pass
         return random.choice(cases)
-
 
     def ajouter_point(self, etage, x, case):
         xmin = (case.x == 0)
@@ -129,7 +127,6 @@ class IA(Joueur.Joueur):
                 self.py.plateau[etage].etageArray[case.x][case.y+1].content += 1
             pass
         pass
-
 
     def triplet(self, py, etage, input):
         if (input.x+1 < len(self.py.plateau[etage].etageArray)):

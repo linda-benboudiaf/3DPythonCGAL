@@ -6,6 +6,7 @@ import Joueur
 import Point
 import IA
 import Plateau0
+import time
 
 def verifier_inputs(etage, input):
     return (input.x < etage+1) and (input.x >= 0) and (input.y < etage+1) and (input.y >= 0) and (etage >= 0) and (etage < 5)
@@ -227,10 +228,13 @@ class Jeu:
         pass
         acc += qui_gagne(acc_j1, acc_j2)
         if acc > 0:
+            Plateau0.setText(1)
             return "gg j1"
         if acc < 0:
+            Plateau0.setText(2)
             return "gg j2"
         else:
+            Plateau0.setText(0)
             return "match nul"
 
 

@@ -3,6 +3,7 @@
 """
 import Etage
 import Point
+import time
 
 class Pyramide:
 

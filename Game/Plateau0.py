@@ -62,7 +62,8 @@ def initBoard():
     board = []
     for i in range(48):
         board.append(b)
-        label (pos=(0,0,0), text='Inside Board')
+        global txt
+        txt = label(pos=(0,0,0), text='Inside Board')
     pass
     # Définition de la couleur du plateau (Des cubes quoi !!)
     for cube in scene.objects:
@@ -70,6 +71,16 @@ def initBoard():
             cube.color = vector(1, 0.4, 0.5)
         pass
     pass
+
+def setText(cas):
+    if cas == 1:
+        txt.text = "gg J1"
+    elif cas == 2:
+        txt.text = "gg J2"
+    elif cas == 0:
+        txt.text = "draw"
+    else:
+        txt.text = "wtf"
 
 def initSystemD():
     global boardD
@@ -558,8 +569,8 @@ def initCubesGamer2 (initColor, oppositeColor):
     boardJ2.append(b36)
 
 def initJeu():
-    jCouleur_yellow = vector(1,1,0)
-    jCouleur_red = vector(1,0,0)
+    jCouleur_yellow = vector(1,1,0.4)
+    jCouleur_red = vector(1,0.6,0.4)
     #jCouleur_ini = input("Choisissez la couleur Red (1, 0,0) or Yellow (1,1,0) \t")
     #if jCouleur_ini == (1,1,0):
     #    initCubesGamer1(jCouleur_yellow, jCouleur_red )
