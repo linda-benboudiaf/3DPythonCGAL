@@ -148,7 +148,7 @@ class Jeu:
                 print("IA TURN")
             else:
                 #ref = placer fct de choix ici
-                self.tour(j, False)
+                self.tour(j, ref, False)
             pass
             Plateau0.refresh_plateau(self.py)
             j = self.swap_j(j)
@@ -162,7 +162,7 @@ class Jeu:
             if (isinstance(j, IA.IA)):
                 self.tourIA(j, True)
             else:
-                self.tour(j, True)
+                self.tour(j, ref, True)
             pass
             Plateau0.refresh_plateau(self.py)
         pass
