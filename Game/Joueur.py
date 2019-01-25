@@ -2,28 +2,33 @@
     Potentiellement documenter le module ici mais ne pas trop le faire parce que c'est pour les faibles
 """
 import Plateau0
+from visual import *
+from math import *
 
 class Joueur:
 
     def __call__(self):
         print("foo")
 
-    def __init__(self, pion, name, cubes):
+    def __init__(self, pion, name):
         self.name = name
         self.pion = pion
         self.pions = []
-        self.cubes = cubes
+        self.cubes = []
         if (pion == 1):
             self.init_pions(1, 2)
         else:
             self.init_pions(2, 1)
         pass
 
+    def set_cubes(self, cubes):
+        self.cubes = cubes
+
     def get_associate_pion(self, ref):
-        for i in range(len(cubes)):
-            if Plateau0.equals(ref, cubes[i]):
+        for i in range(len(self.cubes)):
+            if ref.pos == self.cubes[i].pos:
                 ref.visible = False
-                cubes.pop(i)
+                self.cubes.pop(i)
                 return i
             pass
         pass

@@ -152,7 +152,7 @@ class Jeu:
     def jouer(self):
         j = self.j1
         print(self.py)
-        Plateau0.init_plateau(self.py)
+        #Plateau0.init_plateau(self.py)
         while (not self.is_finish()):
             if (isinstance(j, IA.IA)):
                 self.tourIA(j, False)

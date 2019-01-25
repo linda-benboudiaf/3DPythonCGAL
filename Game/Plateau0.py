@@ -4,9 +4,6 @@ from visual import *
 from math import *
 import Point
 
-def equals(box1, box2):
-    return box1.pos == box2.pos
-
 def initBoard():
     #Premier niveau un pion possible
     b= box(pos=(  0, -4,  2), size= TailleCube)
@@ -189,7 +186,7 @@ def focus(board, i):
 def unfocus(board, i):
     board[i].opacity = 0.2
 
-def parcoursJ1(emplacement):
+def parcoursJ1():
     newFocus = 0
     pastFocus = 0
     print('J1')
@@ -210,13 +207,12 @@ def parcoursJ1(emplacement):
             if touche == '\n':
                 unfocus(boardJ1, newFocus)
                 print("selected")
-                break
+                return boardJ1[newFocus]
 
         # fin traitement touches clavier
         unfocus(boardJ1, pastFocus)
         focus(boardJ1, newFocus)
         rate(100)
-
 
 def parcoursJ2():
     newFocus = 0
@@ -239,13 +235,13 @@ def parcoursJ2():
             if touche == '\n':
                 unfocus(boardJ2, newFocus)
                 print("selected")
-                break
+            return boardJ2[newFocus]
+
 
         # fin traitement touches clavier
         unfocus(boardJ2, pastFocus)
         focus(boardJ2, newFocus)
         rate(100)
-
 
 def parcours():
     newFocus = 0
@@ -265,7 +261,7 @@ def parcours():
                         newFocus -= 1
             # fin traitement touches 'up' ou 'down'
             if touche == '\n':
-                parcoursJ1(boardD[newFocus])
+                return boardD[newFocus]
 
         # fin traitement touches clavier
         unfocus(boardD, pastFocus)
@@ -586,16 +582,42 @@ def init_plateau(py):
         pass
     pass
 
+def is_in_board(box):
+    for l in range(len(boardD)):
+        if box.pos == boardD[l].pos:
+            return True
+        pass
+    pass
+    return False
+
 def refresh_plateau(py):
     for i in range(len(py.plateau)):
         for j in range(len(py.plateau[i].etageArray)):
             for k in range(len(py.plateau[i].etageArray[j])):
                 if py.plateau[i].etageArray[j][k].content == 1:
                     py.get_pion(i, Point.Point(j, k)).refBox.color = color.yellow
+                    for case in boardD:
+                        if py.plateau[i].etageArray[j][k].refBox.pos == case.pos:
+                            boardD.remove(case)
+                        pass
+                    pass
                 elif py.plateau[i].etageArray[j][k].content == 2:
                     py.get_pion(i, Point.Point(j, k)).refBox.color = color.red
-                elif py.plateau[i].etageArray[j][k].content == 0:
+                    for case in boardD:
+                        if py.plateau[i].etageArray[j][k].refBox.pos == case.pos:
+                            boardD.remove(case)
+                        pass
+                    pass
+                elif py.plateau[i].etageArray[j][k].content == 0 and not is_in_board(py.plateau[i].etageArray[j][k].refBox):
                     boardD.append(py.get_pion(i, Point.Point(j, k)).refBox)
+                    py.plateau[i].etageArray[j][k].refBox.visible = True
+                elif py.plateau[i].etageArray[j][k].content == 3:
+                    #boardD.append(py.get_pion(i, Point.Point(j, k)).refBox)
+                    for case in boardD:
+                        if py.plateau[i].etageArray[j][k].refBox.pos == case.pos:
+                            boardD.remove(case)
+                        pass
+                    pass
                 pass
             pass
         pass
