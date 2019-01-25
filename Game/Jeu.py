@@ -10,6 +10,14 @@ import Plateau0
 def verifier_inputs(etage, input):
     return (input.x < etage+1) and (input.x >= 0) and (input.y < etage+1) and (input.y >= 0) and (etage >= 0) and (etage < 5)
 
+def qui_gagne(acc1, acc2):
+    if acc1 > acc2:
+        return 1
+    if acc1 < acc2:
+        return -1
+    else:
+        return 0
+
 class Jeu:
 
     def __call__(self):
@@ -178,14 +186,6 @@ class Jeu:
         pass
         print(self.compter_points())
 
-    def qui_gagne(acc1, acc2):
-        if acc1 > acc2:
-            return 1
-        if acc1 < acc2:
-            return -1
-        else:
-            return 0
-
     def compter_points(self):
         acc = 0
         acc_j1 = 0
@@ -204,9 +204,9 @@ class Jeu:
         acc += qui_gagne(acc_j1, acc_j2)
 
         #2eme face gauche
-        for i in range(len(self.plateau)):
-            for j in range(len(self.plateau[i].etageArray)):
-                if (self.plateau[i].etageArray[j][0].content == self.j1.pion):
+        for i in range(len(self.py.plateau)):
+            for j in range(len(self.py.plateau[i].etageArray)):
+                if (self.py.plateau[i].etageArray[j][0].content == self.j1.pion):
                     acc_j1 += 1
                 else:
                     acc_j2 += 1
@@ -216,9 +216,9 @@ class Jeu:
         acc += qui_gagne(acc_j1, acc_j2)
 
         #3eme face
-        for i in range(len(self.plateau)):
-            for j in range(len(self.plateau[i].etageArray)):
-                if (self.plateau[i].etageArray[j][len(self.plateau[i].etageArray[j])-1].content == self.j1.pion):
+        for i in range(len(self.py.plateau)):
+            for j in range(len(self.py.plateau[i].etageArray)):
+                if (self.py.plateau[i].etageArray[j][len(self.py.plateau[i].etageArray[j])-1].content == self.j1.pion):
                     acc_j1 += 1
                 else:
                     acc_j2 += 1
