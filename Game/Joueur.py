@@ -29,7 +29,7 @@ class Joueur:
             if ref.pos == self.cubes[i].pos:
                 ref.visible = False
                 self.cubes.pop(i)
-                return i
+                return self.pions.pop(i)
             pass
         pass
         return -1

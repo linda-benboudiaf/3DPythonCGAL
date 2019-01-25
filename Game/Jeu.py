@@ -36,6 +36,8 @@ class Jeu:
         idx_pion = int(p)
         """
         if j.is_pion_available(idx_pion):
+            Plateau0.set_invisible(j, j.cubes[idx_pion])
+            j.cubes.pop(idx_pion)
             return j.pions.pop(idx_pion)
         else:
             return self.choisir_piece(j, idx_pion)
@@ -44,7 +46,7 @@ class Jeu:
     def choisir_piece_IA(self, j, piece):
         for i in range(len(j.pions)):
             if j.pions[i] == piece:
-                Plateau0.set_invisible(j.cubes[i])
+                Plateau0.set_invisible(j, j.cubes[i])
                 j.cubes.pop(i)
                 return j.pions.pop(i)
             pass
@@ -52,7 +54,7 @@ class Jeu:
         if len(j.pions) == 0:
             return -1
         else:
-            Plateau0.set_invisible(j.cubes[0])
+            Plateau0.set_invisible(j, j.cubes[0])
             j.cubes.pop(0)
             return j.pions.pop(0)
         pass
@@ -65,9 +67,10 @@ class Jeu:
         pass
         self.py.debloquer_etage()
         print(self.py)
-        rejouer = self.rejouer(j, case[0], case[1], piece)
+        rejouer = self.rejouer(j, case[0], case[1], j.pion)
         if (rejouer > 0 and not finish):
             self.tour_supplementaire_IA(j, case[0], case[1], rejouer)
+            Plateau0.refresh_plateau(self.py)
         pass
 
     def tour(self, j, finish):
@@ -80,7 +83,7 @@ class Jeu:
         y = int(in3)
         """
         ref = Plateau0.parcourir(j)
-        pion = self.choisir_piece(j, j.get_associate_pion(ref))
+        pion = j.get_associate_pion(ref)
         ref_plateau = Plateau0.parcours()
         point = self.py.trouver_coordonnees(ref_plateau)
         etage = point[0]
@@ -99,11 +102,15 @@ class Jeu:
         pass
         self.py.debloquer_etage()
         print(self.py)
-        rejouer = self.rejouer(j, etage, input4, pion)
+        rejouer = self.rejouer(j, etage, input4, j.pion)
+        print(rejouer)
+
         if (rejouer > 0 and not finish):
+            print(self.swap_j(j))
             ref = Plateau0.parcourir(self.swap_j(j))
-            pion = self.choisir_piece(self.swap_j(j), self.swap_j(j).get_associate_pion(ref))
-            self.tour_supplementaire(j, etage, input4, pion, rejouer)
+            pion2 = self.swap_j(j).get_associate_pion(ref)
+            self.tour_supplementaire(j, etage, input4, pion2, rejouer)
+            Plateau0.refresh_plateau(self.py)
         pass
 
     def choix_type_pion_IA(self, j, etage, case1, case2, case3):
@@ -119,24 +126,25 @@ class Jeu:
             case_d = self.py.plateau[etage].etageArray[input.x+1][input.y]
             case_r = self.py.plateau[etage].etageArray[input.x][input.y+1]
             type_pion = self.choix_type_pion_IA(j, etage, case, case_d, case_r)
-            pion = self.choisir_piece_IA(j, type_pion)
+            pion = self.choisir_piece_IA(self.swap_j(j), type_pion)
             self.py.pose(etage-1, input, pion)
         pass
         if (rejouer == 2):
             case_l = self.py.plateau[etage].etageArray[input.x][input.y-1]
             case_ld = self.py.plateau[etage].etageArray[input.x+1][input.y-1]
             type_pion = self.choix_type_pion_IA(j, etage, case, case_l, case_ld)
-            pion = self.choisir_piece_IA(j, type_pion)
+            pion = self.choisir_piece_IA(self.swap_j(j), type_pion)
             self.py.pose(etage-1, Point.Point(input.x, input.y-1), pion)
         pass
         if (rejouer == 3):
             case_u = self.py.plateau[etage].etageArray[input.x-1][input.y]
             case_ur = self.py.plateau[etage].etageArray[input.x-1][input.y+1]
             type_pion = self.choix_type_pion_IA(j, etage, case, case_u, case_ur)
-            pion = self.choisir_piece_IA(j, type_pion)
+            pion = self.choisir_piece_IA(self.swap_j(j), type_pion)
             self.py.pose(etage-1, Point.Point(input.x-1, input.y), pion)
         pass
         self.py.debloquer_etage()
+
         print(self.py)
 
     def tour_supplementaire(self, j, etage, input4, pion, rejouer):
@@ -150,6 +158,7 @@ class Jeu:
             self.py.pose(etage-1, Point.Point(input4.x-1, input4.y), pion)
         pass
         self.py.debloquer_etage()
+
         print(self.py)
 
     def is_finish(self):

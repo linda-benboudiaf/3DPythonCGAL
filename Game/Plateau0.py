@@ -247,7 +247,7 @@ def parcoursJ2():
             if touche == '\n':
                 unfocus(boardJ2, newFocus)
                 print("selected")
-            return boardJ2[newFocus]
+                return boardJ2[newFocus]
 
 
         # fin traitement touches clavier
@@ -592,9 +592,13 @@ def init_plateau(py):
         pass
     pass
 
-def set_invisible(box):
+def set_invisible(j, box):
     box.visible = False
-    sleep(3)
+    """if j.pion == 1:
+        boardJ1.remove(box)
+    else:
+        boardJ2.remove(box)
+    sleep(1)"""
 
 def is_in_board(box):
     for l in range(len(boardD)):
