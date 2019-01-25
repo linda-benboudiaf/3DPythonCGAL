@@ -7,10 +7,14 @@ class Point:
         self.x = inputX
         self.y = inputY
         self.content = 3 # 0 ouvert, 1 noir, 2 blanc
+        self.ref = -1
 
     def __str__(self):
         return str(self.content)
 
+    def set_ref(self, ref):
+        self.ref = ref
+        
     def is_ouvert(self):
         return self.content == 0
 
