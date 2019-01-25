@@ -260,14 +260,14 @@ def parcours():
     pastFocus = 0
     while True:
         if scene.kb.keys:
-            touche = scene.kb.getkey() 
+            touche = scene.kb.getkey()
             if touche == 'up' or touche == 'down':
                 if touche == 'up':
                     if newFocus < len(boardD)-1 :
                         pastFocus = newFocus
                         newFocus += 1
                 else:
-                    if newFocus > 0: 
+                    if newFocus > 0:
                         pastFocus = newFocus
                         newFocus -= 1
             if touche == '\n':
@@ -592,6 +592,10 @@ def init_plateau(py):
         pass
     pass
 
+def set_invisible(box):
+    box.visible = False
+    sleep(3)
+
 def is_in_board(box):
     for l in range(len(boardD)):
         if box.pos == boardD[l].pos:
@@ -606,6 +610,7 @@ def refresh_plateau(py):
             for k in range(len(py.plateau[i].etageArray[j])):
                 if py.plateau[i].etageArray[j][k].content == 1:
                     py.get_pion(i, Point.Point(j, k)).refBox.color = color.yellow
+                    py.get_pion(i, Point.Point(j, k)).refBox.opacity = 1
                     for case in boardD:
                         if py.plateau[i].etageArray[j][k].refBox.pos == case.pos:
                             boardD.remove(case)
@@ -613,6 +618,7 @@ def refresh_plateau(py):
                     pass
                 elif py.plateau[i].etageArray[j][k].content == 2:
                     py.get_pion(i, Point.Point(j, k)).refBox.color = color.red
+                    py.get_pion(i, Point.Point(j, k)).refBox.opacity = 1
                     for case in boardD:
                         if py.plateau[i].etageArray[j][k].refBox.pos == case.pos:
                             boardD.remove(case)
@@ -631,7 +637,7 @@ def refresh_plateau(py):
             pass
         pass
     pass
-    sleep(10) #rate(motif s)
+    sleep(3) #rate(motif s)
 
 def parcourir(j):
     if j.pion == 1:
@@ -649,7 +655,8 @@ def main(jeuInput):
     global drag_pos
     drag_pos = None
     scene = display(x=0, y=0, title = 'Plateau.Inside', background=(0, 0, 0), width = 1000, height= 10000)
-    scene.range = 5
+    scene.range = 40
+    scene.fullscreen = True
     scene.autocenter = True
     # Lumière
     local_light(pos=(10,10,0), color=color.yellow)

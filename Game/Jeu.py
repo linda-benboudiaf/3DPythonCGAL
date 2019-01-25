@@ -44,7 +44,7 @@ class Jeu:
     def choisir_piece_IA(self, j, piece):
         for i in range(len(j.pions)):
             if j.pions[i] == piece:
-                j.cubes[i].visible = False
+                Plateau0.set_invisible(j.cubes[i])
                 j.cubes.pop(i)
                 return j.pions.pop(i)
             pass
@@ -52,7 +52,7 @@ class Jeu:
         if len(j.pions) == 0:
             return -1
         else:
-            j.cubes[0].visible = False
+            Plateau0.set_invisible(j.cubes[0])
             j.cubes.pop(0)
             return j.pions.pop(0)
         pass
