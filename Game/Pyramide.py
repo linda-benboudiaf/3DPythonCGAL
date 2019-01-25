@@ -103,3 +103,16 @@ class Pyramide:
         else:
             return False
         pass
+
+    #graphic purpose
+    def trouver_coordonees(self, ref):
+        for i in range(len(self.plateau)):
+            for j in range(len(self.plateau[i].etageArray)):
+                for k in range(len(self.plateau[i].etageArray[j])):
+                    if self.plateau[i].etageArray[j][k].refBox == ref:
+                        return [i, Point.Point(j, k)]
+                    pass
+                pass
+            pass
+        pass
+        return -1
