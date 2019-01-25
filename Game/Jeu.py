@@ -54,13 +54,16 @@ class Jeu:
             self.tour_supplementaire_IA(j, case[0], case[1], rejouer)
         pass
 
-    def tour(self, j, finish):
+    def tour(self, j, ref, finish):
+        """
         in1 = input("etage? : ")
         etage = int(in1)
         in2 = input("y? : ") #le sens des axes, c'est complique. Stop juger
         x = int(in2)
         in3 = input("x? : ")
         y = int(in3)
+        """
+        self.py.trouver_coordonees(ref)
         input4 = Point.Point(x, y)
         if (not verifier_inputs(etage, input4)):
             print("mauvais input")
