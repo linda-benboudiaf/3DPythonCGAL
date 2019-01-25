@@ -105,7 +105,7 @@ class Pyramide:
         pass
 
     #graphic purpose
-    def trouver_coordonees(self, ref):
+    def trouver_coordonnees(self, ref):
         for i in range(len(self.plateau)):
             for j in range(len(self.plateau[i].etageArray)):
                 for k in range(len(self.plateau[i].etageArray[j])):

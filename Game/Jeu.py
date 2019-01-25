@@ -5,6 +5,7 @@ import Pyramide
 import Joueur
 import Point
 import IA
+import Plateau0
 
 def verifier_inputs(etage, input):
     return (input.x < etage+1) and (input.x >= 0) and (input.y < etage+1) and (input.y >= 0) and (etage >= 0) and (etage < 5)
@@ -63,7 +64,10 @@ class Jeu:
         in3 = input("x? : ")
         y = int(in3)
         """
-        self.py.trouver_coordonees(ref)
+        point = self.py.trouver_coordonnees(ref)
+        etage = point[0]
+        x = point[1].x
+        y = point[1].y
         input4 = Point.Point(x, y)
         if (not verifier_inputs(etage, input4)):
             print("mauvais input")
@@ -137,13 +141,16 @@ class Jeu:
     def jouer(self):
         j = self.j1
         print(self.py)
+        Plateau0.init_plateau(self.py)
         while (not self.is_finish()):
             if (isinstance(j, IA.IA)):
                 self.tourIA(j, False)
                 print("IA TURN")
             else:
+                #ref = placer fct de choix ici
                 self.tour(j, False)
             pass
+            Plateau0.refresh_plateau(self.py)
             j = self.swap_j(j)
         pass
         if (len(self.j1.pions) == 0):
@@ -157,6 +164,7 @@ class Jeu:
             else:
                 self.tour(j, True)
             pass
+            Plateau0.refresh_plateau(self.py)
         pass
         print(self.compter_points())
 
