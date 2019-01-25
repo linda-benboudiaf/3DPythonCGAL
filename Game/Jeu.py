@@ -30,7 +30,7 @@ class Jeu:
         pass
 
     def choisir_piece_IA(self, j, piece):
-        for i in len(j.pions):
+        for i in range(len(j.pions)):
             if j.pions[i] == piece:
                 return j.pions.pop(i)
             pass
@@ -43,15 +43,15 @@ class Jeu:
 
     def tourIA(self, j, finish):
         case = j.predict(self.py)
-        piece = self.choisir_piece_IA(j, j.piece)
+        piece = self.choisir_piece_IA(j, j.pion)
         if (piece != -1):
             self.py.pose(case[0], case[1], piece)
         pass
         self.py.debloquer_etage()
         print(self.py)
-        rejouer = self.rejouer(j, etage, input4, pion)
+        rejouer = self.rejouer(j, case[0], case[1], piece)
         if (rejouer > 0 and not finish):
-            self.tour_supplementaire_IA(j, etage, input4, rejouer)
+            self.tour_supplementaire_IA(j, case[0], case[1], rejouer)
         pass
 
     def tour(self, j, finish):
@@ -92,21 +92,21 @@ class Jeu:
             case_d = self.py.plateau[etage].etageArray[input.x+1][input.y]
             case_r = self.py.plateau[etage].etageArray[input.x][input.y+1]
             type_pion = self.choix_type_pion_IA(j, etage, case, case_d, case_r)
-            pion = self.choisir_piece_IA(self.swap_j(j), type_pion)
+            pion = self.choisir_piece_IA(j, type_pion)
             self.py.pose(etage-1, input, pion)
         pass
         if (rejouer == 2):
             case_l = self.py.plateau[etage].etageArray[input.x][input.y-1]
             case_ld = self.py.plateau[etage].etageArray[input.x+1][input.y-1]
             type_pion = self.choix_type_pion_IA(j, etage, case, case_l, case_ld)
-            pion = self.choisir_piece_IA(self.swap_j(j), type_pion)
+            pion = self.choisir_piece_IA(j, type_pion)
             self.py.pose(etage-1, Point.Point(input.x, input.y-1), pion)
         pass
         if (rejouer == 3):
             case_u = self.py.plateau[etage].etageArray[input.x-1][input.y]
             case_ur = self.py.plateau[etage].etageArray[input.x-1][input.y+1]
             type_pion = self.choix_type_pion_IA(j, etage, case, case_u, case_ur)
-            pion = self.choisir_piece_IA(self.swap_j(j), type_pion)
+            pion = self.choisir_piece_IA(j, type_pion)
             self.py.pose(etage-1, Point.Point(input.x-1, input.y), pion)
         pass
         self.py.debloquer_etage()
@@ -149,7 +149,7 @@ class Jeu:
             j = self.j1
         pass
         while (not self.is_really_finish(j)):
-            if (isinstance(j, IA)):
+            if (isinstance(j, IA.IA)):
                 self.tourIA(j, True)
             else:
                 self.tour(j, True)
