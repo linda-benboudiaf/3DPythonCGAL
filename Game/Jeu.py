@@ -35,12 +35,16 @@ class Jeu:
     def choisir_piece_IA(self, j, piece):
         for i in range(len(j.pions)):
             if j.pions[i] == piece:
+                j.cubes[i].visible = False
+                j.cubes.pop(i)
                 return j.pions.pop(i)
             pass
         pass
         if len(j.pions) == 0:
             return -1
         else:
+            j.cubes[0].visible = False
+            j.cubes.pop(0)
             return j.pions.pop(0)
         pass
 
@@ -143,7 +147,7 @@ class Jeu:
         return (len(self.j1.pions) == 0) or (len(self.j2.pions) == 0)
 
     def is_really_finish(self, j):
-        return len(j.pions) == 0
+        return len(j.pions) == 1
 
     def jouer(self):
         j = self.j1
