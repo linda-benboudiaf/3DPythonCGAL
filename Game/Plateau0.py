@@ -3,6 +3,7 @@ from __future__ import division, print_function
 from visual import *
 from math import *
 import Point
+import time
 
 def initBoard():
     #Premier niveau un pion possible
@@ -633,6 +634,7 @@ def refresh_plateau(py):
             pass
         pass
     pass
+    sleep(10) #rate(motif s)
 
 def parcourir(j):
     if j.pion == 1:

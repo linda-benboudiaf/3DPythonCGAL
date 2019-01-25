@@ -5,7 +5,6 @@ import Pyramide
 import Joueur
 import Point
 import random
-
 #l'IA attribue une note sur 10 hahahahahaha
 class IA(Joueur.Joueur):
     def __init__(self, pion, name):

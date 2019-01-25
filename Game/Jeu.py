@@ -164,12 +164,16 @@ class Jeu:
         #Plateau0.init_plateau(self.py)
         while (not self.is_finish()):
             if (isinstance(j, IA.IA)):
+                time.sleep(3)
                 self.tourIA(j, False)
+
                 print("IA TURN")
             else:
                 self.tour(j, False)
             pass
+
             Plateau0.refresh_plateau(self.py)
+
             j = self.swap_j(j)
         pass
         if (len(self.j1.pions) == 0):
@@ -179,7 +183,9 @@ class Jeu:
         pass
         while (not self.is_really_finish(j)):
             if (isinstance(j, IA.IA)):
+                time.sleep(3)
                 self.tourIA(j, True)
+
             else:
                 self.tour(j, True)
             pass
