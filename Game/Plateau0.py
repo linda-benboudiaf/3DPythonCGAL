@@ -61,12 +61,12 @@ def initBoard():
     board = []
     for i in range(48):
         board.append(b)
-        label (pos=(0,0,0), text='This is a Cube')
+        label (pos=(0,0,0), text='Inside Board')
     pass
     # Définition de la couleur du plateau (Des cubes quoi !!)
     for cube in scene.objects:
         if isinstance(cube, box):
-            cube.color = vector(1,0.5, 1)
+            cube.color = vector(1, 0.4, 0.5)
         pass
     pass
 
@@ -208,16 +208,194 @@ def test():
         focus(newFocus)
         rate(100)
 
+drag_pos = None
+
 def take_obj(event):
     global drag_pos
-    if event.pick == cube:
-        drag_pos = event.pickpos
-        scene.bind('mousemove', move, cube)
-        scene.bind('mouseup', drop, cube) #Drop the cube man !!
-    pass
+
+    #### BEGINNING GAMER ONE CUBES #####
+    if event.pick == b1:
+            drag_pos = event.pickpos
+            scene.bind('mousemove', move, b1)
+            scene.bind('mouseup', drop, b1)
+    elif event.pick == b2:
+            drag_pos = event.pickpos
+            scene.bind('mousemove', move, b2)
+            scene.bind('mouseup', drop, b2)
+            pass
+    elif event.pick == b3:
+            drag_pos = event.pickpos
+            scene.bind('mousemove', move, b3)
+            scene.bind('mouseup', drop, b3)
+            pass
+    elif event.pick == b4:
+            drag_pos = event.pickpos
+            scene.bind('mousemove', move, b4)
+            scene.bind('mouseup', drop, b4)
+    elif event.pick == b5:
+            drag_pos = event.pickpos
+            scene.bind('mousemove', move, b5)
+            scene.bind('mouseup', drop, b5)
+            pass
+    elif event.pick == b6:
+            drag_pos = event.pickpos
+            scene.bind('mousemove', move, b6)
+            scene.bind('mouseup', drop, b6)
+            pass
+    elif event.pick == b7:
+            drag_pos = event.pickpos
+            scene.bind('mousemove', move, b7)
+            scene.bind('mouseup', drop, b7)
+            pass
+    elif event.pick == b8:
+            drag_pos = event.pickpos
+            scene.bind('mousemove', move, b8)
+            scene.bind('mouseup', drop, b8)
+            pass
+    elif event.pick == b9:
+            drag_pos = event.pickpos
+            scene.bind('mousemove', move, b9)
+            scene.bind('mouseup', drop, b9)
+    elif event.pick == b10:
+            drag_pos = event.pickpos
+            scene.bind('mousemove', move, b10)
+            scene.bind('mouseup', drop, b10)
+            pass
+    elif event.pick == b11:
+            drag_pos = event.pickpos
+            scene.bind('mousemove', move, b11)
+            scene.bind('mouseup', drop, b11)
+            pass
+    elif event.pick == b12:
+            drag_pos = event.pickpos
+            scene.bind('mousemove', move, b12)
+            scene.bind('mouseup', drop, b12)
+            pass
+    elif event.pick == b13:
+            drag_pos = event.pickpos
+            scene.bind('mousemove', move, b13)
+            scene.bind('mouseup', drop, b13)
+            pass
+    elif event.pick == b14:
+            drag_pos = event.pickpos
+            scene.bind('mousemove', move, b14)
+            scene.bind('mouseup', drop, b14)
+            pass
+    elif event.pick == b15:
+            drag_pos = event.pickpos
+            scene.bind('mousemove', move, b15)
+            scene.bind('mouseup', drop, b15)
+    elif event.pick == b16:
+            drag_pos = event.pickpos
+            scene.bind('mousemove', move, b16)
+            scene.bind('mouseup', drop, b16)
+            pass
+    elif event.pick == b17:
+            drag_pos = event.pickpos
+            scene.bind('mousemove', move, b17)
+            scene.bind('mouseup', drop, b17)
+            pass
+    elif event.pick == b18:
+            drag_pos = event.pickpos
+            scene.bind('mousemove', move, b18)
+            scene.bind('mouseup', drop, b18)
+            pass
+    ##### END OF GAMER ONE CUBES #######
+    ##### BEGINNING OF GAMER TWO CUBES #####
+    if event.pick == b19:
+            drag_pos = event.pickpos
+            scene.bind('mousemove', move, b19)
+            scene.bind('mouseup', drop, b19)
+            pass
+    elif event.pick == b20:
+            drag_pos = event.pickpos
+            scene.bind('mousemove', move, b20)
+            scene.bind('mouseup', drop, b20)
+            pass
+    elif event.pick == b21:
+            drag_pos = event.pickpos
+            scene.bind('mousemove', move, b21)
+            scene.bind('mouseup', drop, b21)
+            pass
+    elif event.pick == b22:
+            drag_pos = event.pickpos
+            scene.bind('mousemove', move, b22)
+            scene.bind('mouseup', drop, b22)
+            pass
+    elif event.pick == b23:
+            drag_pos = event.pickpos
+            scene.bind('mousemove', move, b23)
+            scene.bind('mouseup', drop, b23)
+            pass
+    elif event.pick == b24:
+            drag_pos = event.pickpos
+            scene.bind('mousemove', move, b24)
+            scene.bind('mouseup', drop, b24)
+            pass
+    elif event.pick == b25:
+            drag_pos = event.pickpos
+            scene.bind('mousemove', move, b25)
+            scene.bind('mouseup', drop, b25)
+            pass
+    elif event.pick == b26:
+            drag_pos = event.pickpos
+            scene.bind('mousemove', move, b26)
+            scene.bind('mouseup', drop, b26)
+            pass
+    elif event.pick == b27:
+            drag_pos = event.pickpos
+            scene.bind('mousemove', move, b27)
+            scene.bind('mouseup', drop, b27)
+            pass
+    elif event.pick == b28:
+            drag_pos = event.pickpos
+            scene.bind('mousemove', move, b28)
+            scene.bind('mouseup', drop, b28)
+            pass
+    elif event.pick == b29:
+            drag_pos = event.pickpos
+            scene.bind('mousemove', move, b29)
+            scene.bind('mouseup', drop, b29)
+            pass
+    elif event.pick == b30:
+            drag_pos = event.pickpos
+            scene.bind('mousemove', move, b30)
+            scene.bind('mouseup', drop, b30)
+            pass
+    elif event.pick == b31:
+            drag_pos = event.pickpos
+            scene.bind('mousemove', move, b31)
+            scene.bind('mouseup', drop, b31)
+            pass
+    elif event.pick == b32:
+            drag_pos = event.pickpos
+            scene.bind('mousemove', move, b32)
+            scene.bind('mouseup', drop, b32)
+            pass
+    elif event.pick == b33:
+            drag_pos = event.pickpos
+            scene.bind('mousemove', move, b33)
+            scene.bind('mouseup', drop, b33)
+            pass
+    elif event.pick == b34:
+            drag_pos = event.pickpos
+            scene.bind('mousemove', move, b34)
+            scene.bind('mouseup', drop, b34)
+            pass
+    elif event.pick == b35:
+            drag_pos = event.pickpos
+            scene.bind('mousemove', move, b35)
+            scene.bind('mouseup', drop, b35)
+            pass
+    elif event.pick == b36:
+            drag_pos = event.pickpos
+            scene.bind('mousemove', move, b36)
+            scene.bind('mouseup', drop, b36)
+            pass
 
 def move(evt, obj):
     global drag_pos # The initial mouse position.
+
     new_pos = scene.mouse.project(normal=(0,0,1))
     if new_pos != drag_pos: # if mouse has moved.
         obj.pos += new_pos - drag_pos
@@ -231,56 +409,53 @@ def drop(evt):
 def initCube():
     # Drag and Drop du Cube
     global cube
-    cube = box(pos=(4, -2, -8), size=TailleCube,color= color.yellow)
-    drag_pos = None
-
-    scene.bind('mousedown', take_obj)
-
 
 ## Créer des cubes pour les joueur 18 pour chaqu'un + attribution de couleurs ...
 def initCubesGamer1 (initColor, oppositeColor):
     label(pos=(14, -2, 4), text= "Gamer 1")
-    b1= box(pos=(  12,  -2,  4), size= TailleCube, color = initColor)
-    b2= box(pos=(  15, -2, 4), size= TailleCube, color = initColor)
-    b3= box(pos=(  18, -2, 4), size= TailleCube, color = initColor)
-    b4= box(pos=(  21, -2,  4), size= TailleCube, color = initColor)
-    b5= box(pos=(  12, -6,  4), size= TailleCube, color = initColor)
-    b6= box(pos=(  15, -6,  4), size= TailleCube, color = initColor)
-    b7= box(pos=(  18, -6,  4), size= TailleCube, color = initColor)
-    b8= box(pos=(  21, -6,  4), size= TailleCube, color = initColor)
-    b9= box(pos=(  24, -10,  4), size= TailleCube, color = initColor)
-    b10= box(pos=( 12, -10,  4), size= TailleCube, color = initColor)
-    b11= box(pos=( 15, -10,  4), size= TailleCube, color = initColor)
-    b12= box(pos=( 18, -10,  4), size= TailleCube, color = initColor)
-    b13= box(pos=( 21, -10,  4), size= TailleCube, color = initColor)
+    global  b1, b2, b3,b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16, b17, b18
+    b1= box(pos=(  12,  -2,  -10), size= TailleCube, color = initColor)
+    b2= box(pos=(  15, -2, -10), size= TailleCube, color = initColor)
+    b3= box(pos=(  18, -2, -10), size= TailleCube, color = initColor)
+    b4= box(pos=(  21, -2,  -10), size= TailleCube, color = initColor)
+    b5= box(pos=(  12, -6,  -10), size= TailleCube, color = initColor)
+    b6= box(pos=(  15, -6,  -10), size= TailleCube, color = initColor)
+    b7= box(pos=(  18, -6,  -10), size= TailleCube, color = initColor)
+    b8= box(pos=(  21, -6,  -10), size= TailleCube, color = initColor)
+    b9= box(pos=(  24, -10,  -10), size= TailleCube, color = initColor)
+    b10= box(pos=( 12, -10,  -10), size= TailleCube, color = initColor)
+    b11= box(pos=( 15, -10,  -10), size= TailleCube, color = initColor)
+    b12= box(pos=( 18, -10,  -10), size= TailleCube, color = initColor)
+    b13= box(pos=( 21, -10,  -10), size= TailleCube, color = initColor)
     #Opposite Color
-    b14= box(pos=( 12, 0,  4), size= TailleCube, color = oppositeColor)
-    b15= box(pos=( 15, 0,  4), size= TailleCube, color = oppositeColor)
-    b16= box(pos=( 18, 0,  4), size= TailleCube, color = oppositeColor)
-    b17= box(pos=( 21, 0,  4), size= TailleCube, color = oppositeColor)
-    b18= box(pos=( 24, 0,  4), size= TailleCube, color = oppositeColor)
+    b14= box(pos=( 12, 0,  -10), size= TailleCube, color = oppositeColor)
+    b15= box(pos=( 15, 0,  -10), size= TailleCube, color = oppositeColor)
+    b16= box(pos=( 18, 0,  -10), size= TailleCube, color = oppositeColor)
+    b17= box(pos=( 21, 0,  -10), size= TailleCube, color = oppositeColor)
+    b18= box(pos=( 24, 0,  -10), size= TailleCube, color = oppositeColor)
 
 def initCubesGamer2 (initColor, oppositeColor):
     label(pos=(-14, -2, -4), text= "Gamer 2")
-    b19= box(pos=( -12, -2,  -4), size= TailleCube, color = initColor)
-    b20= box(pos=( -15, -2,  -4) , size= TailleCube, color = initColor)
-    b21= box(pos=( -18, -2,  -4) , size= TailleCube, color = initColor)
-    b22= box(pos=( -21, -2,  -4), size= TailleCube, color = initColor)
-    b23= box(pos=( -12, -6,  -4), size= TailleCube, color = initColor)
-    b24= box(pos=( -15, -6,  -4), size= TailleCube, color = initColor)
-    b25= box(pos=( -18, -6,  -4), size= TailleCube, color = initColor)
-    b26= box(pos=( -21, -6,  -4), size= TailleCube, color = initColor)
-    b27= box(pos=( -24, -10, -4), size= TailleCube, color = initColor)
-    b28= box(pos=( -12, -10, -4), size= TailleCube, color = initColor)
-    b29= box(pos=( -15, -10, -4), size= TailleCube, color = initColor)
-    b30= box(pos=( -18, -10, -4), size= TailleCube, color = initColor)
-    b31= box(pos=( -21, -10, -4), size= TailleCube, color = initColor)
+    global b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36
+    b19= box(pos=( -12, -2,  -10), size= TailleCube, color = initColor)
+    b20= box(pos=( -15, -2,  -10) , size= TailleCube, color = initColor)
+    b21= box(pos=( -18, -2,  -10) , size= TailleCube, color = initColor)
+    b22= box(pos=( -21, -2,  -10), size= TailleCube, color = initColor)
+    b23= box(pos=( -12, -6,  -10), size= TailleCube, color = initColor)
+    b24= box(pos=( -15, -6,  -10), size= TailleCube, color = initColor)
+    b25= box(pos=( -18, -6,  -10), size= TailleCube, color = initColor)
+    b26= box(pos=( -21, -6,  -10), size= TailleCube, color = initColor)
+    b27= box(pos=( -24, -10, -10), size= TailleCube, color = initColor)
+    b28= box(pos=( -12, -10, -10), size= TailleCube, color = initColor)
+    b29= box(pos=( -15, -10, -10), size= TailleCube, color = initColor)
+    b30= box(pos=( -18, -10, -10), size= TailleCube, color = initColor)
+    b31= box(pos=( -21, -10, -10), size= TailleCube, color = initColor)
     #Opposite Color
-    b32= box(pos=( -12, 0,  -4), size= TailleCube, color = oppositeColor)
-    b33= box(pos=( -15, 0,  -4), size= TailleCube, color = oppositeColor)
-    b34= box(pos=( -18, 0,  -4), size= TailleCube, color = oppositeColor)
-    b35= box(pos=( -21, 0,  -4), size= TailleCube, color = oppositeColor)
-    b36= box(pos=( -24, 0,  -4), size= TailleCube, color = oppositeColor)
+    b32= box(pos=( -12, 0,  -10), size= TailleCube, color = oppositeColor)
+    b33= box(pos=( -15, 0,  -10), size= TailleCube, color = oppositeColor)
+    b34= box(pos=( -18, 0,  -10), size= TailleCube, color = oppositeColor)
+    b35= box(pos=( -21, 0,  -10), size= TailleCube, color = oppositeColor)
+    b36= box(pos=( -24, 0,  -10), size= TailleCube, color = oppositeColor)
 
 def jeu():
     jCouleur_yellow = vector(1,1,0)
@@ -300,14 +475,16 @@ def main():
     # Mettre en place Camèra + Lumière ...
     # Scene represente le monde "World" on definit certain paramètre initial...
     global scene
+    global drag_pos
+    drag_pos = None
     scene = display(x=0, y=0, title = 'Plateau.Inside', background=(0, 0, 0), width = 1000, height= 10000)
     scene.range = 5
     scene.autocenter = True
     # Lumière
-    local_light(pos=(10,10,0), color=color.white)
+    local_light(pos=(10,10,0), color=color.yellow)
     global TailleCube
     TailleCube = vector(2,2,2)
-
+    scene.bind('mousedown', take_obj)
     initBoard()
     initCube()
     initSystemD()
