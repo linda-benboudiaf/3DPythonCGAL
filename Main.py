@@ -7,7 +7,7 @@ def main():
     j2 = Joueur.Joueur(2, "j2")
     jeu = Jeu.Jeu(j1, j2)
     Plateau0.main(jeu)
-    Plateau0.test()
+    Plateau0.parcours()
     #jeu.jouer()
     #po = py.plateau[4].etageArray[0]
     #py.pose(4, po)
