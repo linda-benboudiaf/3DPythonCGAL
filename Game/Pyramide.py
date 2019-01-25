@@ -24,6 +24,15 @@ class Pyramide:
         #self.print_self()
         print("fin fin")
 
+    def reinitialiser(self):
+        for i in range(len(self.plateau)):
+            for j in range(len(self.plateau[i].etageArray)):
+                for k in range(len(self.plateau[i].etageArray[j])):
+                    self.plateau[i].etageArray[j][k].content = 0
+                pass
+            pass
+        pass
+
     def debloquer_etage(self):
         for i in range(len(self.plateau)):
             for j in range(len(self.plateau[i].etageArray)):
