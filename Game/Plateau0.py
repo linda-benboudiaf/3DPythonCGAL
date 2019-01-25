@@ -76,111 +76,111 @@ def initSystemD():
     boardD = []
     global d400
     d400 = box(pos=(0, -2, 0), size= TailleCube, color=color.white, opacity=0.2, visible=True)
-    boardD.append(d400)
+
     jeu.py.get_pion(0, Point.Point(0, 0)).refBox = d400
 
     global d401
     d401 = box(pos=(0, -4, -2), size= TailleCube, color=color.white, opacity=0.2, visible=True)
-    boardD.append(d401)
+
     global d410
     d410 = box(pos=(0, -6, -4), size= TailleCube, color=color.white, opacity=0.2, visible=True)
-    boardD.append(d410)
+
     global d411
     d411 = box(pos=(0, -8, -6), size= TailleCube, color=color.white, opacity=0.2, visible=True)
-    boardD.append(d411)
+
     global d402
     d402 = box(pos=(0, -10, -8), size= TailleCube, color=color.white, opacity=0.2, visible=True)
-    boardD.append(d402)
+
     global d420
     d420 = box(pos=(-2, -2, -2), size= TailleCube, color=color.white, opacity=0.2, visible=True)
-    boardD.append(d420)
+
     global d412
     d412 = box(pos=(-2, -4, -4), size= TailleCube, color=color.white, opacity=0.2, visible=True)
-    boardD.append(d412)
+
     global d421
     d421 = box(pos=(-2, -6, -6), size= TailleCube, color=color.white, opacity=0.2, visible=True)
-    boardD.append(d421)
+
     global d422
     d422 = box(pos=(-2, -8, -8), size= TailleCube, color=color.white, opacity=0.2, visible=True)
-    boardD.append(d422)
+
     global d403
     d403 = box(pos=(-4, -2, -4), size= TailleCube, color=color.white, opacity=0.2, visible=True)
-    boardD.append(d403)
+
     global d430
     d430 = box(pos=(-4, -4, -6), size= TailleCube, color=color.white, opacity=0.2, visible=True)
-    boardD.append(d430)
+
     global d413
     d413 = box(pos=(-4, -6, -8), size= TailleCube, color=color.white, opacity=0.2, visible=True)
-    boardD.append(d413)
+
     global d431
     d431 = box(pos=(-6, -2, -6), size= TailleCube, color=color.white, opacity=0.2, visible=True)
-    boardD.append(d431)
+
     global d404
     d404 = box(pos=(-6, -4, -8), size= TailleCube, color=color.white, opacity=0.2, visible=True)
-    boardD.append(d404)
+
     global d440
     d440 = box(pos=(-8, -2, -8), size= TailleCube, color=color.white, opacity=0.2, visible=True)
-    boardD.append(d440)
+
     global d300
     d300 = box(pos=(0, -2, -2), size= TailleCube, color=color.white, opacity=0.2, visible=False)
-    boardD.append(d300)
+
     global d301
     d301 = box(pos=(0, -4, -4), size= TailleCube, color=color.white, opacity=0.2, visible=False)
-    boardD.append(d301)
+
     global d310
     d310 = box(pos=(0, -6, -6), size= TailleCube, color=color.white, opacity=0.2, visible=False)
-    boardD.append(d310)
+
     global d311
     d311 = box(pos=(0, -8, -8), size= TailleCube, color=color.white, opacity=0.2, visible=False)
-    boardD.append(d311)
+
     global d320
     d320 = box(pos=(-2, -2, -4), size= TailleCube, color=color.white, opacity=0.2, visible=False)
-    boardD.append(d320)
+
     global d302
     d302 = box(pos=(-2, -4, -6), size= TailleCube, color=color.white, opacity=0.2, visible=False)
-    boardD.append(d302)
+
     global d321
     d321 = box(pos=(-2, -6, -8), size= TailleCube, color=color.white, opacity=0.2, visible=False)
-    boardD.append(d321)
+
     global d303
     d303 = box(pos=(-4, -4, -8), size= TailleCube, color=color.white, opacity=0.2, visible=False)
-    boardD.append(d303)
+
     global d312
     d312 = box(pos=(-4, -2, -6), size= TailleCube, color=color.white, opacity=0.2, visible=False)
-    boardD.append(d312)
+
     global d330
     d330 = box(pos=(-6, -2, -8), size= TailleCube, color=color.white, opacity=0.2, visible=False)
-    boardD.append(d330)
+
     global d200
     d200 = box(pos=(0, -2,-4 ), size= TailleCube, color=color.white, opacity=0.2, visible=False)
-    boardD.append(d200)
+
     global d201
     d201 = box(pos=(0, -4, -6), size= TailleCube, color=color.white, opacity=0.2, visible=False)
-    boardD.append(d201)
+
     global d210
     d210 = box(pos=(0, -6, -8), size= TailleCube, color=color.white, opacity=0.2, visible=False)
-    boardD.append(d210)
+
     global d211
     d211 = box(pos=(-2, -2,-6 ), size= TailleCube, color=color.white, opacity=0.2, visible=False)
-    boardD.append(d211)
+
     global d220
     d220 = box(pos=(-2, -4, -8), size= TailleCube, color=color.white, opacity=0.2, visible=False)
-    boardD.append(d220)
+
     global d202
     d202 = box(pos=(-4, -2, -8), size= TailleCube, color=color.white, opacity=0.2, visible=False)
-    boardD.append(d202)
+
     global d100
     d100 = box(pos=(0, -2, -6 ), size= TailleCube, color=color.white, opacity=0.2, visible=False)
-    boardD.append(d100)
+
     global d110
     d110 = box(pos=(0, -4, -8), size= TailleCube, color=color.white, opacity=0.2, visible=False)
-    boardD.append(d110)
+
     global d101
     d101 = box(pos=(-2, -2, -8), size= TailleCube, color=color.white, opacity=0.2, visible=False)
-    boardD.append(d101)
+
     global d000
     d000 = box(pos=(0,-2 ,-8 ), size= TailleCube, color=color.white, opacity=0.2, visible=False)
-    boardD.append(d000)
+
 
 def focus(i):
     boardD[i].color = color.red
@@ -473,6 +473,32 @@ def jeu():
     #    initCubesGamer1(jCouleur_red, jCouleur_yellow)
     #    initCubesGamer2(jCouleur_yellow, jCouleur_red)
     #pass
+
+def init_plateau(py):
+    for i in range(len(py.plateau)):
+        for j in range(len(py.plateau[i].etageArray)):
+            for k in range(len(py.plateau[i].etageArray[j])):
+                if py.plateau[i].etageArray[j][k].content == 0:
+                    boardD.append(py.get_pion(i, Point.Point(j, k)).refBox)
+                pass
+            pass
+        pass
+    pass
+
+def refresh_plateau(py):
+    for i in range(len(py.plateau)):
+        for j in range(len(py.plateau[i].etageArray)):
+            for k in range(len(py.plateau[i].etageArray[j])):
+                if py.plateau[i].etageArray[j][k].content == 1:
+                    py.get_pion(i, Point.Point(j, k)).refBox.color = color.yellow
+                elif py.plateau[i].etageArray[j][k].content == 2:
+                    py.get_pion(i, Point.Point(j, k)).refBox.color = color.red
+                elif py.plateau[i].etageArray[j][k].content == 0:
+                    boardD.append(py.get_pion(i, Point.Point(j, k)).refBox)
+                pass
+            pass
+        pass
+    pass
 
 def main(jeuInput):
     global jeu
